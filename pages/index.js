@@ -5,11 +5,8 @@ import config from '../config';
 import {
   Container,
   Heading,
-  Text,
-  Code,
   Link,
-  UnorderedList,
-  ListItem,
+  Button,
 } from '@chakra-ui/react';
 
 export default function Home() {
@@ -29,6 +26,9 @@ export default function Home() {
         </Heading>
 
         <Heading as="h3" size="md" mt={8}>This page is under construction. 🚧</Heading>
+        <Link href="https://tinyurl.com/blairhackclub" style={{ textDecoration: "none" }}>
+          <Button colorScheme="red" mt={2}>View our temporary site</Button>
+        </Link>
       </Container>
     </>
   );
