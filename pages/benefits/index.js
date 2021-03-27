@@ -45,7 +45,7 @@ export default function BenefitsPage() {
             <Text fontSize="lg" mt={2}>
               repl.it is an online IDE for coding in just about any language in your browser. We’ve secured Hacker plans for all Hack Clubbers, free for a year!
             </Text>
-            <Link href="/benefits/stickers" style={{ textDecoration: "none" }}>
+            <Link href="/benefits/replit" style={{ textDecoration: "none" }}>
               <Button colorScheme="blackAlpha" color="white" mt={3}>Claim benefit</Button>
             </Link>
           </Box>
@@ -56,7 +56,7 @@ export default function BenefitsPage() {
               It's great for planning projects, or even just to organize your lifestyle.
               Hack Club members get free Personal Pro Plan in their workspaces forever!
             </Text>
-            <Link href="/benefits/stickers" style={{ textDecoration: "none" }}>
+            <Link href="/benefits/notion" style={{ textDecoration: "none" }}>
               <Button colorScheme="blackAlpha" color="white" mt={3}>Claim benefit</Button>
             </Link>
           </Box>
@@ -66,7 +66,7 @@ export default function BenefitsPage() {
               Figma is a design software that is real-time collaborative, all-online, and free to get started with.
               Hack Club members enjoy Pro Plan for free forever!
             </Text>
-            <Link href="/benefits/stickers" style={{ textDecoration: "none" }}>
+            <Link href="/benefits/figma" style={{ textDecoration: "none" }}>
               <Button colorScheme="blackAlpha" color="white" mt={3}>Claim benefit</Button>
             </Link>
           </Box>
@@ -75,7 +75,7 @@ export default function BenefitsPage() {
             <Text fontSize="lg">
               GitHub Student Developer Pack is a free GitHub program that provides students with free access to CS tools and services as long as you are a student.
             </Text>
-            <Link href="/benefits/stickers" style={{ textDecoration: "none" }}>
+            <Link href="/benefits/github" style={{ textDecoration: "none" }}>
               <Button colorScheme="blackAlpha" color="white" mt={3}>Claim benefit</Button>
             </Link>
           </Box>
@@ -86,7 +86,7 @@ export default function BenefitsPage() {
               If you are starting an electronics project it's a great place to visit. 
               All Hack Clubbers can receive a 10% discount on their orders.
             </Text>
-            <Link href="/benefits/stickers" style={{ textDecoration: "none" }}>
+            <Link href="/benefits/adafruit" style={{ textDecoration: "none" }}>
               <Button colorScheme="blackAlpha" color="white" mt={3}>Claim benefit</Button>
             </Link>
           </Box>
