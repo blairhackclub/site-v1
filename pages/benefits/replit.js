@@ -4,6 +4,7 @@ import Benefits from '../../components/Benefits';
 
 import {
   Container,
+  Button,
 } from '@chakra-ui/react';
 
 export default function ReplitPage() {
@@ -11,6 +12,8 @@ export default function ReplitPage() {
   return (
     <Container>
       <Benefits benefit="repl.it" open={modalOpen} setOpen={setModalOpen}/>
+
+      <Button onClick = {() => setModalOpen(true)}>Request Repl.it Hacker</Button>
     </Container>
   )
 }

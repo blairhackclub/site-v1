@@ -4,6 +4,7 @@ import Benefits from '../../components/Benefits';
 
 import {
   Container,
+  Button,
 } from '@chakra-ui/react';
 
 export default function StickersPage() {
@@ -11,6 +12,8 @@ export default function StickersPage() {
   return (
     <Container>
       <Benefits benefit="stickers" open={modalOpen} setOpen={setModalOpen}/>
+
+      <Button onClick = {() => setModalOpen(true)}>Request Stickers</Button>
     </Container>
   )
 }

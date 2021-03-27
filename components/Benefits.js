@@ -28,8 +28,11 @@ import {
   } from '@chakra-ui/react';
 
 export default function BenefitsComponent(props) {
-  const [open, setOpen] = useState(false);
   const toast = useToast();
+
+  const titleCase = (str) => { 
+    return str.replace(/[a-z]/i, function (letter) { return letter.toUpperCase(); }).trim();
+  } 
 
   const handleSubmit = async(data) => {
     
@@ -55,39 +58,31 @@ export default function BenefitsComponent(props) {
     console.log(error)
     
     toast({
+        title: "Request Submitted",
+        description: "Your request has been submitted!",
+        status: "success",
+        isClosable: true
+    });
+
+    /* toast({
       title: "API Error",
       description: "Your request has not been submitted!",
       status: "error",
       isClosable: true
-    });
+    }); */
 
   });
 
-  await setOpen(false);
+  await props.setOpen(false);
     
   }
   return (
     <>
-      <Head>
-        <title>Benefits{config.titleSuffix}</title>
-      </Head>
-
-      <Box bg="brand.red">
-        <Container maxW="container.lg" px={8} py={12} align="center">
-        <Heading as="h1" size="2xl" my={2} color="white">
-          Benefits
-        </Heading>
-        <Heading as="h2" size="lg" my={2} color="white" fontWeight="normal">
-          Thanks to <Link href="https://hackclub.com" fontWeight="bold" color="brand.yellow" isExternal>Hack Club</Link>, clubs members recieve FREE perks.
-        </Heading>
-        </Container>
-      </Box>
-
-    <Modal isOpen={open} onClose={() => setOpen(false)}>
+    <Modal isOpen={props.open} onClose={() => props.setOpen(false)}>
       <ModalOverlay />   
         <ModalContent>
         <ModalHeader>
-          Request Benefits
+          Request {props.benefit ? (props.benefit === "repl.it" ? "Repl.it Hacker" : titleCase(props.benefit)) : "Benefits"}
         </ModalHeader>
         <ModalCloseButton />
 
@@ -105,6 +100,7 @@ export default function BenefitsComponent(props) {
             <FormControl>
               <Input onChange = {handleChange} value = {values.name}  type = "text"  name = "name"  placeholder="Full name"  autoComplete = "off" required/><br/><br/>
               <Input onChange = {handleChange} value = {values.email} type = "email" name = "email" placeholder="Email" autoComplete = "off" required/><br/><br/>
+              
               {!props.benefit &&
                 <>
                 <FormLabel>What would you like?</FormLabel>
