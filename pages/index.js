@@ -2,6 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import config from '../data/config';
 import faq from '../data/faq';
+import socials from '../data/socials';
 
 import {
   Box,
@@ -120,7 +121,7 @@ export default function Home() {
           </Heading>
           <Heading as="h2" size="lg" my={2} color="white" fontWeight="normal">
             We are hosting BlairHacks_5 in 2022! 
-            BlairHacks is the <b>oldest</b> and one of the <b>largest</b> high-school hackathon in Maryland hosted annually at MBHS in Silver Spring.
+            BlairHacks is the <b>oldest</b> and one of the <b>largest</b> high-school hackathons in Maryland hosted annually at MBHS in Silver Spring.
           </Heading>
           <Link href="https://hacks.mbhs.edu" style={{ textDecoration: "none" }} isExternal>
             <Button bg="orange.300" color="white" _hover={{ bg:"orange.200" }}>Check it out!</Button>
@@ -137,7 +138,7 @@ export default function Home() {
           Our club will run at Blair starting the 2021-2022 school year.
           Join the Discord for the latest updates!
         </Text>
-        <Link href="/discord" style={{ textDecoration: "none" }} isExternal>
+        <Link href={socials.discord} style={{ textDecoration: "none" }} isExternal>
           <Button colorScheme="blue" mt={4}>Join the Discord</Button>
         </Link>
       </Container>

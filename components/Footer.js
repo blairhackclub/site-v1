@@ -1,4 +1,5 @@
 import React from 'react';
+import socials from '../data/socials';
 
 import {
   Box,
@@ -25,21 +26,21 @@ export default function FooterComponent() {
       >
         <Stack spacing={12} direction={{ base: "column", md: "row" }} justify="center">
           <Stack spacing={2}>
-            <Link href="/discord">Discord</Link>
+            <Link href={socials.discord} isExternal>Discord</Link>
             <Link href="/team">Our Team</Link>
             <Link href="/officer">Apply for Officer</Link>
             <Heading size="xs" color={useColorModeValue("gray.500", "gray.300")} fontWeight="bold">Resources</Heading>
-            <Link href="/workshops" isExternal>Workshops</Link>
-            <Link href="/toolbox" isExternal>Toolbox (FREE benefits!)</Link>
+            <Link href="/workshops">Workshops</Link>
+            <Link href="/toolbox">Toolbox (FREE benefits!)</Link>
           </Stack>
           <Stack spacing={2}>
             <Heading size="xs" color={useColorModeValue("gray.500", "gray.300")} fontWeight="bold">Email</Heading>
-            <Link href="mailto:blairhackclub@gmail.com">blairhackclub@gmail.com</Link>
+            <Link href="mailto:blairhackclub@gmail.com">{socials.email}</Link>
             <Heading size="xs" color={useColorModeValue("gray.500", "gray.300")} fontWeight="bold">Discord</Heading>
-            <Link href="/discord" isExternal>Blair HC Server</Link>
+            <Link href={socials.discord} isExternal>Blair HC Server</Link>
             <Text>linkai101#4245 (President)<br/>tinu#0935 (VP)</Text>
             <Heading size="xs" color={useColorModeValue("gray.500", "gray.300")} fontWeight="bold">Instagram</Heading>
-            <Link href="https://instagram.com/blairhackclub" isExternal>@blairhackclub</Link>
+            <Link href={socials.instagram} isExternal>@blairhackclub</Link>
           </Stack>
           <Stack spacing={2}>
             <Heading size="xs" color={useColorModeValue("gray.500", "gray.300")} fontWeight="bold">HQ</Heading>
@@ -61,17 +62,17 @@ export default function FooterComponent() {
         <Stack m={2} spacing={4} direction="row" justify="center" align="center">
           <ColorModeToggle color={useColorModeValue("brand.red", "white")}/>
           <Tooltip label="Email">
-            <Link href="mailto:blairhackclub@gmail.com">
+            <Link href={"mailto:"+socials.email}>
               <Icon glyph="email" size={32} />
             </Link>
           </Tooltip>
           <Tooltip label="Discord">
-            <Link href="/discord" isExternal>
+            <Link href={socials.discord} isExternal>
               <Icon glyph="channels" size={32} />
             </Link>
           </Tooltip>
           <Tooltip label="Instagram">
-            <Link href="/instagram" isExternal>
+            <Link href={socials.instagram} isExternal>
               <Icon glyph="instagram" size={32} />
             </Link>
           </Tooltip>
