@@ -83,7 +83,7 @@ export default function BenefitsComponent(props) {
         <ModalCloseButton />
 
         <Formik 
-          initialValues={{name: '', email: '', type: props.benefit ?? "stickers", other: ""}}
+          initialValues={{name: '', email: '', type: props.benefit ?? "stickers", other: "", discord: ""}}
           onSubmit = {(values, {setSubmitting}) => {
           handleSubmit(values);
           }}
@@ -96,6 +96,7 @@ export default function BenefitsComponent(props) {
             <FormControl>
               <Input onChange = {handleChange} value = {values.name}  type = "text"  name = "name"  placeholder="Full name"  autoComplete = "off" required/><br/><br/>
               <Input onChange = {handleChange} value = {values.email} type = "email" name = "email" placeholder="Email" autoComplete = "off" required/><br/><br/>
+              <Input onChange = {handleChange} value = {values.discord} type = "text" name = "discord" placeholder="Discord Tag (Username + Number)" autoComplete = "off" required/><br/><br/>
               
               {!props.benefit &&
                 <>
