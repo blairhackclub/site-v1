@@ -68,7 +68,7 @@ export default function FooterComponent() {
           </Tooltip>
           <Tooltip label="Discord">
             <Link href={socials.discord} isExternal>
-              <Icon glyph="channels" size={32} />
+              <Icon glyph="message" size={32} />
             </Link>
           </Tooltip>
           <Tooltip label="Instagram">

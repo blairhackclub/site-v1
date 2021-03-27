@@ -18,7 +18,7 @@ export default function Custom404() {
         <title>404!{config.titleSuffix}</title>
       </Head>
 
-      <Flex minH="100vh" align="center" justify="center">
+      <Flex minH="90vh" align="center" justify="center">
         <Box align="center">
           <Heading as="h1" size="2xl" color="brand.red">404!</Heading>
           <Text fontSize="lg">Sorry, that page isn't here.</Text>
