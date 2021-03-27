@@ -46,7 +46,7 @@ export default function NavbarComponent() {
         >
           <MenuItem to="/schedule">SCHEDULE</MenuItem>
           <MenuItem to="/workshops">WORKSHOPS</MenuItem>
-          <MenuItem to="/toolbox">TOOLBOX</MenuItem>
+          <MenuItem to="/benefits">BENEFITS</MenuItem>
           <MenuItem to={socials.discord} type="button" isExternal>
             JOIN
           </MenuItem>
