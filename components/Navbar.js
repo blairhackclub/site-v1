@@ -32,7 +32,7 @@ export default function NavbarComponent() {
       <Toggle toggle={toggle} isOpen={isOpen}/>
 
       {/* Links */}
-      <Box px={6}
+      <Box px={6} py={4}
         display={{ base: isOpen ? "block" : "none", md: "block" }}
         flexBasis={{ base: "100%", md: "auto" }}
       >
