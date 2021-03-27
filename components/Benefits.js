@@ -6,11 +6,7 @@ import publicIp from 'public-ip';
 import axios from 'axios';
 
 import {
-  Box,
-  Container,
-  Heading,
   Text,
-  Link,
   FormControl,
   FormLabel,
   Input,
