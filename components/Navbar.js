@@ -9,7 +9,6 @@ import {
   Button,
   Link,
   Image,
-  useColorModeValue,
 } from '@chakra-ui/react';
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 
