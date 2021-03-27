@@ -37,6 +37,8 @@ export default function BenefitsComponent(props) {
     });
     data.ip = ip;
 
+    await console.log(data);
+    
     //Post Data to pageClip
     await axios.post('https://send.pageclip.co/LfK0s4HjxLfPFNkPcDfnbfjMaITqPPrR/benefits', data)
     .then(function (response) {
@@ -53,19 +55,19 @@ export default function BenefitsComponent(props) {
     .catch(function (error) {
     console.log(error)
     
-    toast({
+    /* toast({
         title: "Request Submitted",
         description: "Your request has been submitted!",
         status: "success",
         isClosable: true
-    });
+    }); */
 
-    /* toast({
+    toast({
       title: "API Error",
       description: "Your request has not been submitted!",
       status: "error",
       isClosable: true
-    }); */
+    });
 
   });
 
