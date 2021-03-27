@@ -29,7 +29,7 @@ export default function Home() {
       </Head>
 
       <Box bg="brand.red">
-        <Container maxW="container.lg" px={8} py={12} align="center">
+        <Container maxW="container.lg" px={8} py={24} align="center">
           <Heading as="h1" size="2xl" my={2} color="white">
             Blair Hack Club
           </Heading>
@@ -90,7 +90,7 @@ export default function Home() {
               </Box>
               <Box>
                 <Heading as="h1" size="lg">
-                  Free #SWAG and tools!
+                  Free #SWAG and benefits!
                 </Heading>
                 <Text fontSize="xl">
                   Thanks to <Link href="https://hackclub.com" fontWeight="bold" color="brand.orange" isExternal>Hack Club</Link>, 

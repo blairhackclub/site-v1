@@ -6,141 +6,141 @@ import publicIp from 'public-ip';
 import axios from 'axios';
 
 import {
-    Box,
-    Container,
-    Heading,
-    Text,
-    Link,
-    FormControl,
-    FormLabel,
-    Input,
-    Modal,
-    ModalOverlay,
-    ModalContent,
-    ModalHeader,
-    ModalCloseButton,
-    ModalBody,
-    ModalFooter,
-    Button,
-    Select,
-    Textarea,
-    useToast
+  Box,
+  Container,
+  Heading,
+  Text,
+  Link,
+  FormControl,
+  FormLabel,
+  Input,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalCloseButton,
+  ModalBody,
+  ModalFooter,
+  Button,
+  Select,
+  Textarea,
+  useToast
   } from '@chakra-ui/react';
 
-export default function Benefits(props) {
-    const [open, setOpen] = useState(false);
-    const toast = useToast();
+export default function BenefitsComponent(props) {
+  const [open, setOpen] = useState(false);
+  const toast = useToast();
 
-    const handleSubmit = async(data) => {
-        
-        const ip = await publicIp.v4({
-            fallbackUrls: ['https://ifconfig.co/ip']
-        });
-        data.ip = ip;
+  const handleSubmit = async(data) => {
+    
+    const ip = await publicIp.v4({
+      fallbackUrls: ['https://ifconfig.co/ip']
+    });
+    data.ip = ip;
 
-        //Post Data to pageClip
-        await axios.post('https://send.pageclip.co/LfK0s4HjxLfPFNkPcDfnbfjMaITqPPrR/benefits', data)
-      .then(function (response) {
-        console.log(response)
+    //Post Data to pageClip
+    await axios.post('https://send.pageclip.co/LfK0s4HjxLfPFNkPcDfnbfjMaITqPPrR/benefits', data)
+    .then(function (response) {
+    console.log(response)
 
-        toast({
-            title: "Request Submitted",
-            description: "Your request has been submitted!",
-            status: "success",
-            isClosable: true
-        });
-
-      })
-      .catch(function (error) {
-        console.log(error)
-        
-        toast({
-            title: "API Error",
-            description: "Your request has not been submitted!",
-            status: "error",
-            isClosable: true
-        });
-
+    toast({
+      title: "Request Submitted",
+      description: "Your request has been submitted!",
+      status: "success",
+      isClosable: true
     });
 
-    await setOpen(false);
-        
-    }
-    return (
-        <>
-            <Head>
-                <title>Benefits{config.titleSuffix}</title>
-            </Head>
+    })
+    .catch(function (error) {
+    console.log(error)
+    
+    toast({
+      title: "API Error",
+      description: "Your request has not been submitted!",
+      status: "error",
+      isClosable: true
+    });
 
-            <Box bg="brand.red">
-                <Container maxW="container.lg" px={8} py={12} align="center">
-                <Heading as="h1" size="2xl" my={2} color="white">
-                    Benefits
-                </Heading>
-                <Heading as="h2" size="lg" my={2} color="white" fontWeight="normal">
-                    Thanks to <Link href="https://hackclub.com" fontWeight="bold" color="brand.yellow" isExternal>Hack Club</Link>, clubs members recieve FREE perks.
-                </Heading>
-                </Container>
-            </Box>
+  });
 
-        <Modal isOpen={open} onClose={() => setOpen(false)}>
-            <ModalOverlay />   
-                <ModalContent>
-                <ModalHeader>
-                    Request Benefits
-                </ModalHeader>
-                <ModalCloseButton />
+  await setOpen(false);
+    
+  }
+  return (
+    <>
+      <Head>
+        <title>Benefits{config.titleSuffix}</title>
+      </Head>
 
-                <Formik 
-                    initialValues={{name: '', email: '', type: props.benefit ?? "stickers", other: ""}}
-                    onSubmit = {(values, {setSubmitting}) => {
-                    handleSubmit(values);
-                    }}
-                >
-                {({values, errors, tocuhed, form, handleChange, handleBlur, handleSubmit, isSubmitting}) => (
-                <Form onSubmit={handleSubmit}>
-                    <ModalBody>
-                        {/*props.data.form*/}
-                        
-                        <FormControl>
-                            <Input onChange = {handleChange} value = {values.name}  type = "text"  name = "name"  placeholder="Full name"  autoComplete = "off" required/><br/><br/>
-                            <Input onChange = {handleChange} value = {values.email} type = "email" name = "email" placeholder="Email"      autoComplete = "off" required/><br/><br/>
-                            {!props.benefit &&
-                                <>
-                                <FormLabel>What would you like?</FormLabel>
-                                    <Select value = {values.type} onChange = {handleChange} name = "type" isRequired>
-                                        <option value="stickers">Stickers</option>
-                                        <option value="repl.it">Repl.it Hacker</option>
-                                        <option value="notion">Notion Pro</option>
-                                        <option value="figma">Figma Pro</option>
-                                    </Select><br/>
-                                </>
-                            }
-                            
+      <Box bg="brand.red">
+        <Container maxW="container.lg" px={8} py={12} align="center">
+        <Heading as="h1" size="2xl" my={2} color="white">
+          Benefits
+        </Heading>
+        <Heading as="h2" size="lg" my={2} color="white" fontWeight="normal">
+          Thanks to <Link href="https://hackclub.com" fontWeight="bold" color="brand.yellow" isExternal>Hack Club</Link>, clubs members recieve FREE perks.
+        </Heading>
+        </Container>
+      </Box>
 
-                            <FormLabel>Anything Else?</FormLabel>
-                            <Textarea
-                                value={values.other}
-                                name = "other"
-                                onChange={handleChange}
-                                placeholder="Anything Else?"
-                                autoComplete = "off"
-                            />
-                        </FormControl>
-                        <Text m={4} textAlign="center">Please don't request anything that you will not use</Text>
-                        
-                    </ModalBody>
+    <Modal isOpen={open} onClose={() => setOpen(false)}>
+      <ModalOverlay />   
+        <ModalContent>
+        <ModalHeader>
+          Request Benefits
+        </ModalHeader>
+        <ModalCloseButton />
 
-                    <ModalFooter>
-                        <Button colorScheme="blue" type = "submit" disabled={isSubmitting}>
-                            Submit
-                        </Button>
-                    </ModalFooter>
-                </Form>)}
-                </Formik>
+        <Formik 
+          initialValues={{name: '', email: '', type: props.benefit ?? "stickers", other: ""}}
+          onSubmit = {(values, {setSubmitting}) => {
+          handleSubmit(values);
+          }}
+        >
+        {({values, errors, tocuhed, form, handleChange, handleBlur, handleSubmit, isSubmitting}) => (
+        <Form onSubmit={handleSubmit}>
+          <ModalBody>
+            {/*props.data.form*/}
+            
+            <FormControl>
+              <Input onChange = {handleChange} value = {values.name}  type = "text"  name = "name"  placeholder="Full name"  autoComplete = "off" required/><br/><br/>
+              <Input onChange = {handleChange} value = {values.email} type = "email" name = "email" placeholder="Email" autoComplete = "off" required/><br/><br/>
+              {!props.benefit &&
+                <>
+                <FormLabel>What would you like?</FormLabel>
+                  <Select value = {values.type} onChange = {handleChange} name = "type" isRequired>
+                    <option value="stickers">Stickers</option>
+                    <option value="repl.it">Repl.it Hacker</option>
+                    <option value="notion">Notion Pro</option>
+                    <option value="figma">Figma Pro</option>
+                  </Select><br/>
+                </>
+              }
+              
 
-            </ModalContent>
-        </Modal>
-        </>
-    )
+              <FormLabel>Anything Else?</FormLabel>
+              <Textarea
+                value={values.other}
+                name = "other"
+                onChange={handleChange}
+                placeholder="Anything Else?"
+                autoComplete = "off"
+              />
+            </FormControl>
+            <Text m={4} textAlign="center">Please don't request anything that you will not use</Text>
+            
+          </ModalBody>
+
+          <ModalFooter>
+            <Button colorScheme="blue" type = "submit" disabled={isSubmitting}>
+              Submit
+            </Button>
+          </ModalFooter>
+        </Form>)}
+        </Formik>
+
+      </ModalContent>
+    </Modal>
+    </>
+  )
 }

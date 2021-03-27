@@ -31,7 +31,7 @@ export default function FooterComponent() {
             <Link href="/officer">Apply for Officer</Link>
             <Heading size="xs" color={useColorModeValue("gray.500", "gray.300")} fontWeight="bold">Resources</Heading>
             <Link href="/workshops">Workshops</Link>
-            <Link href="/toolbox">Toolbox (FREE benefits!)</Link>
+            <Link href="/benefits">Benefits</Link>
           </Stack>
           <Stack spacing={2}>
             <Heading size="xs" color={useColorModeValue("gray.500", "gray.300")} fontWeight="bold">Email</Heading>
