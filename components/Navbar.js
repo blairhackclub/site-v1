@@ -43,7 +43,7 @@ export default function NavbarComponent() {
           direction={["column", "row", "row", "row"]}
           pt={[4, 4, 0, 0]}
         >
-          <MenuItem to="/schedule">SCHEDULE</MenuItem>
+          <MenuItem to="https://www.notion.so/blairhackclub/Schedule-e5fc831bcaf942129bb6ea2621b0dfa0" isExternal>SCHEDULE</MenuItem>
           <MenuItem to="/workshops">WORKSHOPS</MenuItem>
           <MenuItem to="/benefits">BENEFITS</MenuItem>
           <MenuItem to={socials.discord} type="button" isExternal>
