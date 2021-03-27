@@ -1,8 +1,10 @@
 import '../styles/globals.css';
 import Head from 'next/head';
-import config from '../config';
+import config from '../data/config';
 import { ChakraProvider } from "@chakra-ui/react";
 import theme from '../lib/theme';
+
+import Footer from '../components/Footer';
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -14,6 +16,7 @@ function MyApp({ Component, pageProps }) {
       
       <ChakraProvider theme={theme} resetCSS>
         <Component {...pageProps} />
+        <Footer/>
       </ChakraProvider>
     </>
   );
