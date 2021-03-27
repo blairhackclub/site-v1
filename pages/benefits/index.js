@@ -32,7 +32,7 @@ export default function BenefitsPage() {
       </Box>
 
       <Container maxW="container.lg">
-        <SimpleGrid columns={2} spacing={8} py={8}>
+        <SimpleGrid columns={{ base: 1, md: 2 }} spacing={8} py={8} px={4}>
           <Box p={8} bg={useColorModeValue("brand.cyan", "blue.400")} borderRadius={16}>
             <Heading as="h2" size="lg">Stickers</Heading>
             <Text fontSize="lg" mt={2}>Get FREE exclusive Hack Club stickers mailed straight to your door!</Text>
