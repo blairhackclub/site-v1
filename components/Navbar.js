@@ -60,7 +60,7 @@ function Logo() {
   return (
     <Box px={8}>
       <Link href="/">
-        <Image h={16} src="/branding/flag-orpheus-top.png" alt="Blair Hack Club"/>
+        <Image h={16} src="/branding/flag-orpheus-top.png"/>
       </Link>
     </Box>
   );

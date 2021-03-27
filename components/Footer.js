@@ -22,7 +22,7 @@ export default function FooterComponent() {
       {/* Links */}
       <Flex p={8}
         justify="center"
-        bg={useColorModeValue("gray.200", "gray.400")}
+        bg={useColorModeValue("gray.200", "gray.500")}
       >
         <Stack spacing={12} direction={{ base: "column", md: "row" }} justify="center">
           <Stack spacing={2}>
