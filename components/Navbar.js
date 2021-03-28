@@ -46,9 +46,7 @@ export default function NavbarComponent() {
           <MenuItem to="https://www.notion.so/blairhackclub/Schedule-e5fc831bcaf942129bb6ea2621b0dfa0" isExternal>SCHEDULE</MenuItem>
           <MenuItem to="/workshops">WORKSHOPS</MenuItem>
           <MenuItem to="/benefits">BENEFITS</MenuItem>
-          <MenuItem to={socials.discord} type="button" isExternal>
-            JOIN
-          </MenuItem>
+          <MenuItem to={socials.discord} type="button" isExternal>JOIN</MenuItem>
         </Stack>
       </Box>
     </Flex>

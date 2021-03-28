@@ -6,7 +6,9 @@ import publicIp from 'public-ip';
 import axios from 'axios';
 
 import {
+  Box,
   Text,
+  Link,
   FormControl,
   FormLabel,
   Input,
@@ -24,55 +26,53 @@ import {
   } from '@chakra-ui/react';
 
 export default function BenefitsComponent(props) {
-  const toast = useToast();
+  const toast=useToast();
 
-  const titleCase = (str) => { 
+  const titleCase=(str) => { 
     return str.replace(/[a-z]/i, function (letter) { return letter.toUpperCase(); }).trim();
   } 
 
-  const handleSubmit = async(data) => {
+  const handleSubmit=async(data) => {
     
-    const ip = await publicIp.v4({
+    const ip=await publicIp.v4({
       fallbackUrls: ['https://ifconfig.co/ip']
     });
-    data.ip = ip;
+    data.ip=ip;
 
-    await console.log(data);
+    //await console.log(data);
 
     //Post Data to pageClip
     await axios.post('https://send.pageclip.co/LfK0s4HjxLfPFNkPcDfnbfjMaITqPPrR/benefits', data)
     .then(function (response) {
-    console.log(response)
+      //console.log(response)
 
-    toast({
-      title: "Request Submitted",
-      description: "Your request has been submitted!",
-      status: "success",
-      isClosable: true
-    });
-
-    })
-    .catch(function (error) {
-    console.log(error)
-    
-    toast({
+      toast({
         title: "Request Submitted",
-        description: "Your request has been submitted!",
+        description: "We've recieved your request!",
         status: "success",
         isClosable: true
+      });
+
+      })
+      .catch(function (error) {
+        console.log("Encountered an error while submitting request: "+error);
+        
+        toast({
+          title: "Request Submitted",
+          description: "We've recieved your request!",
+          status: "success",
+          isClosable: true
+        });
+
+        /*toast({
+          title: "API Error",
+          description: "Encountered an error while submitting your request! :(",
+          status: "error",
+          isClosable: true
+        });*/
     });
 
-    /* toast({
-      title: "API Error",
-      description: "Your request has not been submitted!",
-      status: "error",
-      isClosable: true
-    }); */
-
-  });
-
-  await props.setOpen(false);
-    
+    await props.setOpen(false);
   }
   return (
     <>
@@ -86,7 +86,7 @@ export default function BenefitsComponent(props) {
 
         <Formik 
           initialValues={{name: '', email: '', type: props.benefit ?? "stickers", other: "", discord: ""}}
-          onSubmit = {(values, {setSubmitting}) => {
+          onSubmit={(values, {setSubmitting}) => {
           handleSubmit(values);
           }}
         >
@@ -96,38 +96,48 @@ export default function BenefitsComponent(props) {
             {/*props.data.form*/}
             
             <FormControl>
-              <Input onChange = {handleChange} value = {values.name}  type = "text"  name = "name"  placeholder="Full name"  autoComplete = "off" required/><br/><br/>
-              <Input onChange = {handleChange} value = {values.email} type = "email" name = "email" placeholder="Email" autoComplete = "off" required/><br/><br/>
-              <Input onChange = {handleChange} value = {values.discord} type = "text" name = "discord" placeholder="Discord Tag (Username + Number)" autoComplete = "off" required/><br/><br/>
+              <Box mb={4}>
+                <FormLabel>Full name <Text as="span" color="red">*</Text></FormLabel>
+                <Input onChange={handleChange} value={values.name} type="text" name="name" placeholder="Full name" autoComplete="off" isRequired/>
+              </Box>
+              <Box mb={4}>
+                <FormLabel>Email <Text as="span" color="red">*</Text></FormLabel>
+                <Input onChange={handleChange} value={values.email} type="email" name="email" placeholder="Email" autoComplete="off" isRequired/>
+              </Box>
+              <Box mb={4}>
+                <FormLabel>Discord Tag <Text as="span" color="red">*</Text></FormLabel>
+                <Input onChange={handleChange} value={values.discord} type="text" name="discord" placeholder="Discord Tag (ex. username#1234)" autoComplete="off" isRequired/>
+              </Box>
               
               {!props.benefit &&
-                <>
-                <FormLabel>What would you like?</FormLabel>
-                  <Select value = {values.type} onChange = {handleChange} name = "type" isRequired>
+                <Box mb={4}>
+                  <FormLabel>What would you like? <Text as="span" color="red">*</Text></FormLabel>
+                  <Select value={values.type} onChange={handleChange} name="type" isRequired>
                     <option value="stickers">Stickers</option>
                     <option value="repl.it">Repl.it Hacker</option>
                     <option value="notion">Notion Pro</option>
                     <option value="figma">Figma Pro</option>
-                  </Select><br/>
-                </>
+                  </Select>
+                </Box>
               }
-              
 
-              <FormLabel>Anything Else?</FormLabel>
-              <Textarea
-                value={values.other}
-                name = "other"
-                onChange={handleChange}
-                placeholder="Anything Else?"
-                autoComplete = "off"
-              />
+              <Box mb={4}>
+                <FormLabel>Additional comments</FormLabel>
+                <Textarea
+                  value={values.other}
+                  name="other"
+                  onChange={handleChange}
+                  placeholder="Any additional requests or specifications?"
+                  autoComplete="off"
+                />
+              </Box>
             </FormControl>
-            <Text m={4} textAlign="center">Please don't request anything that you will not use</Text>
+            <Text>By submitting, you agree to the <Link href="/benefits/honorcode" color="red" fontWeight="bold" isExternal>Benefits Honor Code</Link>.</Text>
             
           </ModalBody>
 
           <ModalFooter>
-            <Button colorScheme="blue" type = "submit" disabled={isSubmitting}>
+            <Button colorScheme="blue" type="submit" disabled={isSubmitting}>
               Submit
             </Button>
           </ModalFooter>
