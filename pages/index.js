@@ -36,6 +36,9 @@ export default function Home() {
           <Heading as="h2" size="lg" my={2} color="white" fontWeight="normal">
             A creative coding club where you can learn, share, and hack.
           </Heading>
+          <Heading as="h3" size="md" mt={4} color="white" fontWeight="semibold">
+            Our club will run at Blair starting the 2021-2022 school year.
+          </Heading>
         </Container>
       </Box>
 

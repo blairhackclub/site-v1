@@ -28,25 +28,29 @@ export default function FooterComponent() {
           <Stack spacing={2}>
             <Link href={socials.discord} isExternal>Discord</Link>
             <Link href="/team">Our Team</Link>
-            <Link href="/officer">Apply for Officer</Link>
-            <Heading size="xs" color={useColorModeValue("gray.500", "gray.300")} fontWeight="bold">Resources</Heading>
+            <Link href="/team/join">Join Our Team</Link>
+            <Heading pt={4} size="xs" color={useColorModeValue("gray.500", "gray.300")} fontWeight="bold">
+              Resources
+            </Heading>
             <Link href="/workshops">Workshops</Link>
             <Link href="/benefits">Benefits</Link>
           </Stack>
           <Stack spacing={2}>
-            <Heading size="xs" color={useColorModeValue("gray.500", "gray.300")} fontWeight="bold">Email</Heading>
-            <Link href="mailto:blairhackclub@gmail.com">{socials.email}</Link>
-            <Heading size="xs" color={useColorModeValue("gray.500", "gray.300")} fontWeight="bold">Discord</Heading>
-            <Link href={socials.discord} isExternal>Blair HC Server</Link>
-            <Text>linkai101#4245 (President)<br/>tinu#0935 (VP)</Text>
-            <Heading size="xs" color={useColorModeValue("gray.500", "gray.300")} fontWeight="bold">Instagram</Heading>
-            <Link href={socials.instagram} isExternal>@blairhackclub</Link>
+            <Heading size="xs" color={useColorModeValue("gray.500", "gray.300")} fontWeight="bold">
+              Contact
+            </Heading>
+            <Text>Email: <Link href={"mailto:"+socials.email}>{socials.email}</Link></Text>
+            <Text>Discord:<br/>linkai101#4245 (President)<br/>tinu#0935 (VP)</Text>
+            <Text>Instagram: <Link href={socials.instagram} isExternal>@blairhackclub</Link></Text>
           </Stack>
           <Stack spacing={2}>
-            <Heading size="xs" color={useColorModeValue("gray.500", "gray.300")} fontWeight="bold">HQ</Heading>
+            <Heading size="xs" color={useColorModeValue("gray.500", "gray.300")} fontWeight="bold">
+              HQ
+            </Heading>
+            <Link href="https://hackclub.com" isExternal>Hack Club HQ</Link>
             <Link href="https://hackclub.com/conduct" isExternal>Code of Conduct</Link>
             <Link href="https://hackclub.com/preface" isExternal>Preface</Link>
-            <Link href="https://hackclub.com" isExternal>Hack Club HQ</Link>
+            <Link href="https://hackclub.com/slack" isExternal>Slack</Link>
           </Stack>
         </Stack>
       </Flex>
