@@ -46,7 +46,9 @@ export default function BenefitsPage() {
               <Text fontSize="lg" mt={2}>Get free exclusive Hack Club stickers mailed straight to your door!</Text>
               <Stack direction="row" mt={2} spacing={4} justify="center">
                 {stickers.slice(0,3).map(sticker =>
-                  <Image w={20} src={sticker.image} key={sticker.name}/>
+                  <Flex align="center" justify="center">
+                    <Image w={20} src={sticker.image} key={sticker.label}/>
+                  </Flex>
                 )}
               </Stack>
             </Box>
