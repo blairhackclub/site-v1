@@ -121,10 +121,13 @@ export default function BenefitsPage() {
         <Heading as="h2" size="md" color="brand.muted">THANKS TO OUR SPONSORS</Heading>
         <Stack direction="row" spacing={8} justify="center" m={4}>
           <Flex align="center" justify="center">
-            <Image h={24} src="https://assets.hackclub.com/icon-rounded.png"/>
+            <Link href="https://hackclub.com" isExternal><Image h={24} src="https://assets.hackclub.com/icon-rounded.png"/></Link>
+          </Flex>
+            <Flex align="center" justify="center">
+          <Link href="https://stickermule.com" isExternal><Image w={36} h="auto" src="https://cdn.freebiesupply.com/logos/large/2x/sticker-mule-logo-svg-vector.svg"/></Link>
           </Flex>
           <Flex align="center" justify="center">
-            <Image w={36} h="auto" src="https://2019.hongkong.wordcamp.org/files/2019/08/sticker_mule.png"/>
+            <Link href="https://replit.com" isExternal><Image w={36} h="auto" src="https://lh3.googleusercontent.com/wy5o0ijAE-l9Ru4g2ft84wjHzhURtzumh_M36frnTDOSTNsXivUBZQgu4cWQXs4BQ0is0yepDESHAtFfpSnyVrwHtx2qA4U6f_2-"/></Link>
           </Flex>
         </Stack>
       </Container>
