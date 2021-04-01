@@ -2,86 +2,94 @@ import React from 'react';
 import socials from '../data/socials';
 
 import {
-  Box,
-  Flex,
+  Container,
   Stack,
+  SimpleGrid,
   Text,
   Heading,
   Link,
-  Tooltip,
+  Image,
   useColorModeValue,
 } from '@chakra-ui/react';
 
-import ColorModeToggle from './ColorModeToggle';
-
 import Icon from '@hackclub/icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faDiscord } from '@fortawesome/free-brands-svg-icons';
 
 export default function FooterComponent() {
   return (
-    <Box as="footer">
-      {/* Links */}
-      <Flex p={8}
-        justify="center"
-        bg={useColorModeValue("gray.200", "gray.500")}
+    <Container as="footer" 
+      maxW="container.xl" px={{ base: 8, md: 16 }} py={{ base: 6, md: 12 }}
+      color="brand.muted"
+    >
+      <Stack 
+        direction={{ base: "column", md: "row" }} spacing={{ base: 12, md: 24, lg: 36 }}
+        fontSize="lg"
       >
-        <Stack spacing={12} direction={{ base: "column", md: "row" }} justify="center">
-          <Stack spacing={2}>
-            <Link href={socials.discord} isExternal>Discord</Link>
+        {/* LINKS */}
+        <Stack direction="row" spacing={{ base: 24, md: 24, lg: 36 }}>
+          <Stack direction="column" spacing={3} flex={1} w={36}>
+            <Heading mb={1} size="md" color={useColorModeValue("gray.500", "gray.400")}>
+              Hack Club
+            </Heading>
+            <Link href="/discord">Discord</Link>
             <Link href="/team">Our Team</Link>
             <Link href="/team/join">Join Our Team</Link>
-            <Heading pt={4} size="xs" color={useColorModeValue("gray.500", "gray.300")} fontWeight="bold">
-              Resources
-            </Heading>
-            <Link href="/workshops">Workshops</Link>
-            <Link href="/benefits">Benefits</Link>
-          </Stack>
-          <Stack spacing={2}>
-            <Heading size="xs" color={useColorModeValue("gray.500", "gray.300")} fontWeight="bold">
-              Contact
-            </Heading>
-            <Text>Email: <Link href={"mailto:"+socials.email}>{socials.email}</Link></Text>
-            <Text>Discord:<br/>linkai101#4245 (President)<br/>tinu#0935 (VP)</Text>
-            <Text>Instagram: <Link href={socials.instagram} isExternal>@blairhackclub</Link></Text>
-          </Stack>
-          <Stack spacing={2}>
-            <Heading size="xs" color={useColorModeValue("gray.500", "gray.300")} fontWeight="bold">
-              HQ
-            </Heading>
-            <Link href="https://hackclub.com" isExternal>Hack Club HQ</Link>
-            <Link href="https://hackclub.com/conduct" isExternal>Code of Conduct</Link>
-            <Link href="https://hackclub.com/preface" isExternal>Preface</Link>
             <Link href="https://hackclub.com/slack" isExternal>Slack</Link>
           </Stack>
-        </Stack>
-      </Flex>
 
-      {/* Lower footer */}
-      <Flex p={4}
-        justify="space-between" direction={{ base: "column", md: "row" }}
-        bg="brand.red" color="white"
-      >
-        <Flex align="center" direction={{ base: "column", md: "row" }}>
-          <Text m={2} color="white">&copy; 2021 Blair Hack Club.</Text>
-        </Flex>
-        <Stack m={2} spacing={4} direction="row" justify="center" align="center">
-          <ColorModeToggle color={useColorModeValue("brand.red", "white")}/>
-          <Tooltip label="Email">
-            <Link href={"mailto:"+socials.email}>
-              <Icon glyph="email" size={32} />
+          <Stack direction="column" spacing={3} flex={1} w={36}>
+            <Heading mb={1} size="md" color={useColorModeValue("gray.500", "gray.400")}>
+              Resources
+            </Heading>
+            <Link href="https://hackclub.com/conduct" isExternal>Code of Conduct</Link>
+            <Link href="https://hackclub.com/preface" isExternal>Preface</Link>
+            <Link href="/workshops">Workshops</Link>
+            <Link href="/benefits">Benefits</Link>
+            <Link href="https://hackathons.hackclub.com" isExternal>Hackathons</Link>
+            <Link href="https://events.hackclub.com" isExternal>Events</Link>
+          </Stack>
+        </Stack>
+
+        {/* BRAND, CONNECTIONS, & CONTACT */}
+        <Stack direction="column" spacing={3} w="auto">
+          <Image h={12} w={32} src="/branding/flag-standalone.png"/>
+          <SimpleGrid w={36} columns={{ base: 8, md: 4 }} py={2} spacingX={12} spacingY={2}>
+            <Link href="/discord" p={1}>
+              <FontAwesomeIcon icon={faDiscord} size="lg"/>
             </Link>
-          </Tooltip>
-          <Tooltip label="Discord">
-            <Link href={socials.discord} isExternal>
-              <Icon glyph="message" size={32} />
+            <Link href={socials.github} isExternal>
+              <Icon glyph="github" size={32} />
             </Link>
-          </Tooltip>
-          <Tooltip label="Instagram">
+            <Link href={socials.youtube} isExternal>
+              <Icon glyph="youtube" size={32} />
+            </Link>
             <Link href={socials.instagram} isExternal>
               <Icon glyph="instagram" size={32} />
             </Link>
-          </Tooltip>
+            <Link href={"mailto:"+socials.email}>
+              <Icon glyph="email" size={32} />
+            </Link>
+          </SimpleGrid>
+
+          <Stack direction="column" spacing={1}>
+            <Heading mb={1} size="md" color={useColorModeValue("gray.500", "gray.400")}>
+              Contact
+            </Heading>
+            <Text>blairhackclub@gmail.com</Text>
+            <Text>
+              Discord:<br/>
+              linkai101#4245 (President)<br/>
+              tinu#0935 (VP)
+            </Text>
+          </Stack>
         </Stack>
-      </Flex>
-    </Box>
+      </Stack>
+      
+      {/* COPYRIGHT */}
+      <Text mt={6}>
+        &copy; 2021 Blair Hack Club.
+      </Text>
+    </Container>
   )
 }

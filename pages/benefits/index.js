@@ -46,7 +46,7 @@ export default function BenefitsPage() {
               <Text fontSize="lg" mt={2}>Get free exclusive Hack Club stickers mailed straight to your door!</Text>
               <Stack direction="row" mt={2} spacing={4} justify="center">
                 {stickers.slice(0,3).map(sticker =>
-                  <Flex align="center" justify="center">
+                  <Flex align="center" justify="center" key={sticker.label}>
                     <Image w={20} src={sticker.image} key={sticker.label}/>
                   </Flex>
                 )}
@@ -123,7 +123,7 @@ export default function BenefitsPage() {
         <Heading as="h2" size="md" color="brand.muted">THANKS TO OUR SPONSORS</Heading>
         <Stack direction="row" spacing={8} justify="center" m={4}>
           <Flex align="center" justify="center">
-            <Link href="https://hackclub.com" isExternal><Image h={24} src="https://assets.hackclub.com/icon-rounded.png"/></Link>
+            <Link href="https://hackclub.com" isExternal><Image w={24} h="auto" src="https://assets.hackclub.com/icon-rounded.png"/></Link>
           </Flex>
             <Flex align="center" justify="center">
           <Link href="https://stickermule.com" isExternal><Image w={36} h="auto" src="https://cdn.freebiesupply.com/logos/large/2x/sticker-mule-logo-svg-vector.svg"/></Link>

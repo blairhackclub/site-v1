@@ -2,7 +2,6 @@ import React from 'react';
 import Head from 'next/head';
 import config from '../data/config';
 import faq from '../data/faq';
-import socials from '../data/socials';
 
 import {
   Box,
@@ -141,7 +140,7 @@ export default function Home() {
           Our club will run at Blair starting the 2021-2022 school year.
           Join the Discord for the latest updates!
         </Text>
-        <Link href={socials.discord} style={{ textDecoration: "none" }} isExternal>
+        <Link href="/discord" style={{ textDecoration: "none" }}>
           <Button colorScheme="blue" mt={4}>Join the Discord</Button>
         </Link>
       </Container>

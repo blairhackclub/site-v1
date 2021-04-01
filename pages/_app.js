@@ -1,4 +1,5 @@
 import '../styles/globals.css';
+import "@fortawesome/fontawesome-svg-core/styles.css";
 import Head from 'next/head';
 import config from '../data/config';
 import { ChakraProvider } from "@chakra-ui/react";

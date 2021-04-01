@@ -49,7 +49,7 @@ export default function StickersPage() {
       <Container maxW="container.md">
         <SimpleGrid columns={{ base: 2, md: 3 }} spacing={8} py={8} px={4}>
           {stickers.map(sticker =>
-            <Box> 
+            <Box key={sticker.label}> 
               <Flex key={sticker.label} minH={36} justify="center" align="center">
                 <Image w={36} src={sticker.image}/>
               </Flex>
