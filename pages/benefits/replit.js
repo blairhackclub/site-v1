@@ -3,6 +3,7 @@ import Head from 'next/head';
 import config from '../../data/config';
 
 import Benefits from '../../components/Benefits';
+import Header from '../../components/Header';
 
 import {
   Box,
@@ -23,16 +24,11 @@ export default function ReplitPage() {
         <title>Repl.it Hacker{config.titleSuffix}</title>
       </Head>
 
-      <Box bg="brand.red">
-        <Container maxW="container.lg" p={8} align="center">
-        <Heading as="h1" size="xl" my={2} color="white">
-          Repl.it Hacker
-        </Heading>
+      <Header title="Repl.it Hacker">
         <Heading as="h2" size="md" my={2} color="white" fontWeight="normal">
           repl.it is an online IDE for coding in just about any language in your browser.
         </Heading>
-        </Container>
-      </Box>
+      </Header>
 
       <Container maxW="container.xl" p={12} align="center">
         <Heading as="h2" size="md" color="brand.muted">REPL.IT</Heading>
@@ -47,7 +43,7 @@ export default function ReplitPage() {
       <Container maxW="container.xl" p={12} pt={16}>
         <Heading as="h2" size="md" color="brand.muted">WHAT IT IS</Heading>
         <Heading as="h1" size="2xl" my={2}>
-          We use <Link href="https://replit.com" color="brand.blue">repl.it</Link> to code.
+          We use <Link href="https://replit.com" color="brand.blue" isExternal>repl.it</Link> to code.
         </Heading>
         <Text fontSize="xl" maxW="container.md">
           repl.it is an online IDE for coding in just about any language in your browser.
@@ -57,7 +53,7 @@ export default function ReplitPage() {
         </Text>
       </Container>
 
-      <Container maxW="container.xl" p={12} pt={16}>
+      {/*<Container maxW="container.xl" p={12} pt={16}>
         <Heading as="h2" size="md" color="brand.muted">BENEFITS</Heading>
         <Heading as="h1" size="2xl" my={2}>
           <Text as="span" color="brand.blue" style={{ whiteSpace: "pre" }}>Hacker Plan</Text> brings access to many helpful features.
@@ -73,7 +69,26 @@ export default function ReplitPage() {
           <ListItem>2 vCPUs, 4x the speed</ListItem>
           <ListItem>Offline repls</ListItem>
         </UnorderedList>
-      </Container>
+      </Container>*/}
+
+      <Box bg="brand.blue">
+        <Container maxW="container.lg" p={12}>
+        <Heading as="h1" size="2xl" my={2} color="white">
+          <Text as="span" textDecoration="underline" style={{ whiteSpace: "pre" }}>Hacker Plan</Text> brings access to many helpful features.
+        </Heading>
+        <Text fontSize="xl" maxW="container.md" color="white">
+          With repl.it Hacker Plan, you'll have access to:
+        </Text>
+        <UnorderedList mt={2} pl={4} color="white">
+          <ListItem>Private repls</ListItem>
+          <ListItem>Always on repls (your repls will always be running)</ListItem>
+          <ListItem>5GB of storage</ListItem>
+          <ListItem>2GB of memory</ListItem>
+          <ListItem>2 vCPUs, 4x the speed</ListItem>
+          <ListItem>Offline repls</ListItem>
+        </UnorderedList>
+        </Container>
+      </Box>
     </>
   )
 }

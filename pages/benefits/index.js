@@ -3,6 +3,8 @@ import Head from 'next/head';
 import config from '../../data/config';
 import stickers from '../../data/stickers';
 
+import Header from '../../components/Header';
+
 import {
   Box,
   Flex,
@@ -24,19 +26,14 @@ export default function BenefitsPage() {
         <title>Benefits{config.titleSuffix}</title>
       </Head>
 
-      <Box bg="brand.red">
-        <Container maxW="container.lg" p={8} align="center">
-        <Heading as="h1" size="xl" my={2} color="white">
-          Benefits
-        </Heading>
+      <Header title="Benefits">
         <Heading as="h2" size="md" my={2} color="white" fontWeight="normal">
           Thanks to <Link href="https://hackclub.com" fontWeight="bold" color="brand.yellow" isExternal>Hack Club</Link>, club members recieve FREE perks.
         </Heading>
         <Text mt={4} color="white" fontWeight="normal">
           By claiming benefits, you agree to the <Link href="/benefits/honorcode" fontWeight="bold">Benefits Honor Code</Link>.
         </Text>
-        </Container>
-      </Box>
+      </Header>
 
       <Container maxW="container.lg">
         <SimpleGrid columns={{ base: 1, md: 2 }} spacing={8} py={8} px={4}>

@@ -4,6 +4,7 @@ import config from '../../data/config';
 import stickers from '../../data/stickers';
 
 import Benefits from '../../components/Benefits';
+import Header from '../../components/Header';
 
 import {
   Box,
@@ -25,16 +26,11 @@ export default function StickersPage() {
         <title>Stickers{config.titleSuffix}</title>
       </Head>
 
-      <Box bg="brand.red">
-        <Container maxW="container.lg" p={8} align="center">
-        <Heading as="h1" size="xl" my={2} color="white">
-          Stickers
-        </Heading>
+      <Header title="Stickers">
         <Heading as="h2" size="md" my={2} color="white" fontWeight="normal">
           Get free exclusive Hack Club stickers delivered straight to your door!
         </Heading>
-        </Container>
-      </Box>
+      </Header>
 
       <Container maxW="container.xl" p={12} align="center">
         <Heading as="h2" size="md" color="brand.muted">STICKERS</Heading>

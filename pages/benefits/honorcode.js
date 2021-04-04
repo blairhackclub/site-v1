@@ -2,6 +2,8 @@ import React from 'react';
 import Head from 'next/head';
 import config from '../../data/config';
 
+import Header from '../../components/Header';
+
 import {
   Box,
   Container,
@@ -17,16 +19,11 @@ export default function HonorCodePage() {
         <title>Benefits Honor Code{config.titleSuffix}</title>
       </Head>
 
-      <Box bg="brand.red">
-        <Container maxW="container.lg" p={8} align="center">
-        <Heading as="h1" size="xl" my={2} color="white">
-          Benefits Honor Code
-        </Heading>
+      <Header title="Benefits Honor Code">
         <Heading as="h2" size="md" my={2} color="white" fontWeight="normal">
           Please follow the honor code so that we can continue to offer these amazing benefits and perks.
         </Heading>
-        </Container>
-      </Box>
+      </Header>
 
       <Container maxW="container.xl" p={12} align="center">
         <Heading as="h2" size="md" color="brand.muted">BENEFITS HONOR CODE</Heading>
