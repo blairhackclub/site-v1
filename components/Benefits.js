@@ -51,6 +51,7 @@ export default function BenefitsComponent(props) {
           "Email": data.email,
           "Discord Tag": data.discord,
           "Status": "Todo",
+          "IP Address": data.ip,
           "Additional comments": data.other
         }
       }
