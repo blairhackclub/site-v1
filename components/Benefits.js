@@ -28,6 +28,7 @@ import {
 export default function BenefitsComponent(props) {
   const toast=useToast();
   const webhook = require("webhook-discord");
+  const Airtable = require("airtable");
 
   const Hook = new webhook.Webhook("https://discord.com/api/webhooks/828986417198661682/AlaQVRUqKdq-PF1HZwAdMq1Kyc7a_KfLfhqsgBqFfNYGV5W3DpvJgujrCcYIwxcygGZq");
 
@@ -36,55 +37,62 @@ export default function BenefitsComponent(props) {
   } 
 
   const handleSubmit=async(data) => {
-    const ip=await publicIp.v4({
+    data.ip = await publicIp.v4({
       fallbackUrls: ['https://ifconfig.co/ip']
     });
-    data.ip=ip;
 
-    //await console.log(data);
-    
-    var msg = new webhook.MessageBuilder()
-    .setName(data.type.charAt(0).toUpperCase() + data.type.slice(1))
-    .setColor(data.type === 'stickers' ? "#ff8c37" : "#338eda")
-    .setTitle(`**${data.name} is requesting ${data.type}**`)
-    .addField('Discord Tag', data.discord)
-    .addField('Email', data.email)
-    .addField('IP', `||${data.ip}||`);
-    
-    if (data.other) msg.addField('Additional comments', data.other);
+    //Post Data to airtable
+    let base = new Airtable({apiKey: process.env.NEXT_PUBLIC_AIRTABLE_API_KEY}).base('appSKsWct5I3Mkfxp');
 
-    await Hook.send(msg);
-    
-    // Post Data to pageClip
-    /* await axios.post('https://send.pageclip.co/LfK0s4HjxLfPFNkPcDfnbfjMaITqPPrR/benefits', data)
-    .then(function (response) {
-      //console.log(response)
+    await base(data.type === "stickers" ? 'Stickers' : 'Repl.it Hacker').create([
+      {
+        "fields": {
+          "Name": data.name,
+          "Email": data.email,
+          "Discord Tag": data.discord,
+          "Status": "Todo",
+          "Additional comments": data.other
+        }
+      }
+    ], async function(err, records) {
+      if (err) {
+        console.error(err);
 
-      toast({
-        title: "Request Submitted",
-        description: "We've recieved your request!",
-        status: "success",
-        isClosable: true
-      });
-
-      })
-      .catch(function (error) {
-        console.log("Encountered an error while submitting request: "+error);
-        
-        toast({
-          title: "Request Submitted",
-          description: "We've recieved your request!",
-          status: "success",
-          isClosable: true
-        });
-
-        toast({
+        await toast({
           title: "API Error",
           description: "Encountered an error while submitting your request! :(",
           status: "error",
           isClosable: true
         });
-    }); */
+
+        return;
+      }
+      records.forEach(async function (record) {
+        let id = record.getId();
+        let tableId = data.type === "stickers" ? "tbljxlqRoeS69K4aP/viwSX0nUcFwaMUHCU" : "tblGJauJQz8dOOEpM/viwf9PrME0MhrYhRR";
+
+        //Post Webhook to discord
+        let msg = await new webhook.MessageBuilder()
+        .setName(titleCase(data.type)+ " Request")
+        .setColor(data.type === 'stickers' ? "#ff8c37" : "#338eda")
+        .setTitle(`**${data.name} is requesting ${data.type}**`)
+        .setURL(`https://airtable.com/${tableId}/${id}?blocks=hide`)
+        .addField('Discord Tag', data.discord)
+        .addField('Email', data.email)
+        .addField('IP', `||${data.ip}||`)
+    
+        if (data.other) await msg.addField('Additional comments', data.other);
+
+        await Hook.send(msg);
+
+        await toast({
+          title: "Request Submitted",
+          description: "We've recieved your request!",
+          status: "success",
+          isClosable: true
+        });
+      });
+    });
 
     await props.setOpen(false);
   }
