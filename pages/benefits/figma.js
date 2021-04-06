@@ -96,9 +96,6 @@ export default function ReplitPage() {
               <ListItem>Have fun!!</ListItem>
             </OrderedList>
           </ModalBody>
-
-          <ModalFooter>
-          </ModalFooter>
         </ModalContent>
       </Modal>
     </>

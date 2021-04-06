@@ -109,9 +109,6 @@ export default function ReplitPage() {
               <ListItem>They’ll all receive an email invite to the page so you can collaborate together!</ListItem>
             </OrderedList>
           </ModalBody>
-
-          <ModalFooter>
-          </ModalFooter>
         </ModalContent>
       </Modal>
     </>

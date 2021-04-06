@@ -44,7 +44,7 @@ export default function BenefitsPage() {
               <Stack direction="row" mt={2} spacing={4} justify="center">
                 {stickers.slice(0,3).map(sticker =>
                   <Flex align="center" justify="center" key={sticker.label}>
-                    <Image w={20} src={sticker.image} key={sticker.label}/>
+                    <Image w={20} src={sticker.image}/>
                   </Flex>
                 )}
               </Stack>
@@ -59,6 +59,9 @@ export default function BenefitsPage() {
               <Text fontSize="lg" mt={2}>
                 repl.it is an online IDE for coding in just about any language in your browser. We’ve secured Hacker plans for all Hack Clubbers, free for a year!
               </Text>
+              <Flex align="center" justify="center" m={4}>
+                <Image w={40} src="https://lever-client-logos.s3.us-west-2.amazonaws.com/e99ed897-4b15-4142-acb5-615c2df6b3c2-1615515751109.png"/>
+              </Flex>
             </Box>
             <Link href="/benefits/replit" style={{ textDecoration: "none" }}>
               <Button colorScheme="blackAlpha" color="white" mt={3}>Claim benefit</Button>
@@ -72,6 +75,9 @@ export default function BenefitsPage() {
                 It's great for planning projects, or even just to organize your lifestyle.
                 Hack Clubbers get free Personal Pro Plan in their workspaces while they are a student.
               </Text>
+              <Flex align="center" justify="center" m={4}>
+                <Image w={20} src="https://cdn.iconscout.com/icon/free/png-256/notion-1693557-1442598.png"/>
+              </Flex>
             </Box>
             <Link href="/benefits/notion" style={{ textDecoration: "none" }}>
               <Button colorScheme="blackAlpha" color="white" mt={3}>Claim benefit</Button>
@@ -84,6 +90,9 @@ export default function BenefitsPage() {
                 Figma is a design software that is real-time collaborative, all-online, and free to get started with.
                 Hack Clubbers enjoy free Pro Plan while they are a student.
               </Text>
+              <Flex align="center" justify="center" m={4}>
+                <Image w={20} src="https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg"/>
+              </Flex>
             </Box>
             <Link href="/benefits/figma" style={{ textDecoration: "none" }}>
               <Button colorScheme="blackAlpha" color="white" mt={3}>Claim benefit</Button>
@@ -93,8 +102,12 @@ export default function BenefitsPage() {
             <Box minH={200}>
               <Heading as="h2" size="lg" mt={2}>GitHub Student Developer Pack</Heading>
               <Text fontSize="lg">
-                GitHub Student Developer Pack is a free GitHub program that provides students with free access to CS tools and services as long as you are a student.
+                GitHub Student Developer Pack is a free GitHub program that provides students with 
+                free access to CS tools and services as long as you are a student.
               </Text>
+              <Flex align="center" justify="center" m={4}>
+                <Image w={20} src="https://education.github.com/assets/sdp-backpack-a64038716bf134f45e809ff86b9611fb97e41bbd2ccfa3181da73cf164d3c200.png"/>
+              </Flex>
             </Box>
             <Link href="https://education.github.com/pack" style={{ textDecoration: "none" }} isExternal>
               <Button colorScheme="blackAlpha" color="white" mt={3}>Claim benefit</Button>
