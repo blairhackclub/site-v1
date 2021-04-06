@@ -36,7 +36,6 @@ export default function BenefitsComponent(props) {
   } 
 
   const handleSubmit=async(data) => {
-    
     const ip=await publicIp.v4({
       fallbackUrls: ['https://ifconfig.co/ip']
     });
@@ -44,14 +43,19 @@ export default function BenefitsComponent(props) {
 
     //await console.log(data);
     
-    const msg = new webhook.MessageBuilder()
-                .setName("Benefit Submission")
-                .setColor("#008080")
-                .setTitle(`**${data.name} is requesting ${data.type}**`)
-                .setDescription(`Discord tag is ${data.discord} \nIP Address is ||${data.ip}|| \nEmail is ${data.email} \nOther Notes: ${data.other}`);
+    var msg = new webhook.MessageBuilder()
+    .setName(data.type.charAt(0).toUpperCase() + data.type.slice(1))
+    .setColor(data.type === 'stickers' ? "#ff8c37" : "#338eda")
+    .setTitle(`**${data.name} is requesting ${data.type}**`)
+    .addField('Discord Tag', data.discord)
+    .addField('Email', data.email)
+    .addField('IP', `||${data.ip}||`);
+    
+    if (data.other) msg.addField('Additional comments', data.other);
 
     await Hook.send(msg);
-    //Post Data to pageClip
+    
+    // Post Data to pageClip
     /* await axios.post('https://send.pageclip.co/LfK0s4HjxLfPFNkPcDfnbfjMaITqPPrR/benefits', data)
     .then(function (response) {
       //console.log(response)

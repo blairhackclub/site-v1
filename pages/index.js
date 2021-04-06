@@ -122,7 +122,7 @@ export default function Home() {
             #BlairHacks_5
           </Heading>
           <Heading as="h2" size="lg" my={2} color="white" fontWeight="normal">
-            We are hosting BlairHacks_5 in 2022! 
+            {/*We are hosting BlairHacks_5 in 2022!*/}
             BlairHacks is the <b>oldest</b> and one of the <b>largest</b> high-school hackathons in Maryland hosted annually at MBHS in Silver Spring.
           </Heading>
           <Link href="https://hacks.mbhs.edu" style={{ textDecoration: "none" }} isExternal>
