@@ -47,7 +47,8 @@ export default function BenefitsComponent(props) {
     const msg = new webhook.MessageBuilder()
                 .setName("Benefit Submission")
                 .setColor("#008080")
-                .setDescription(`${data.name} is requesting ${data.type}. \nDiscord tag is ${data.discord}. \nIP Address is ${data.ip}. \nEmail is ${data.email} \nOther Notes: ${data.other}`);
+                .setTitle(`**${data.name} is requesting ${data.type}**`)
+                .setDescription(`Discord tag is ${data.discord} \nIP Address is ||${data.ip}|| \nEmail is ${data.email} \nOther Notes: ${data.other}`);
 
     await Hook.send(msg);
     //Post Data to pageClip
