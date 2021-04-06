@@ -27,6 +27,9 @@ import {
 
 export default function BenefitsComponent(props) {
   const toast=useToast();
+  const webhook = require("webhook-discord");
+
+  const Hook = new webhook.Webhook("https://discord.com/api/webhooks/828986417198661682/AlaQVRUqKdq-PF1HZwAdMq1Kyc7a_KfLfhqsgBqFfNYGV5W3DpvJgujrCcYIwxcygGZq");
 
   const titleCase=(str) => { 
     return str.replace(/[a-z]/i, function (letter) { return letter.toUpperCase(); }).trim();
@@ -40,9 +43,15 @@ export default function BenefitsComponent(props) {
     data.ip=ip;
 
     //await console.log(data);
+    
+    const msg = new webhook.MessageBuilder()
+                .setName("Benefit Submission")
+                .setColor("#008080")
+                .setDescription(`${data.name} is requesting ${data.type}. \nDiscord tag is ${data.discord}. \nIP Address is ${data.ip}. \nEmail is ${data.email} \nOther Notes: ${data.other}`);
 
+    await Hook.send(msg);
     //Post Data to pageClip
-    await axios.post('https://send.pageclip.co/LfK0s4HjxLfPFNkPcDfnbfjMaITqPPrR/benefits', data)
+    /* await axios.post('https://send.pageclip.co/LfK0s4HjxLfPFNkPcDfnbfjMaITqPPrR/benefits', data)
     .then(function (response) {
       //console.log(response)
 
@@ -64,13 +73,13 @@ export default function BenefitsComponent(props) {
           isClosable: true
         });
 
-        /*toast({
+        toast({
           title: "API Error",
           description: "Encountered an error while submitting your request! :(",
           status: "error",
           isClosable: true
-        });*/
-    });
+        });
+    }); */
 
     await props.setOpen(false);
   }
