@@ -70,7 +70,7 @@ export default function BenefitsPage() {
               <Text fontSize="lg" mt={2}>
                 Notion is a popular tool for shared documents, databases, task lists, and more.
                 It's great for planning projects, or even just to organize your lifestyle.
-                Hack Club members get free Personal Pro Plan in their workspaces forever!
+                Hack Clubbers get free Personal Pro Plan in their workspaces while they are a student.
               </Text>
             </Box>
             <Link href="/benefits/notion" style={{ textDecoration: "none" }}>
@@ -82,7 +82,7 @@ export default function BenefitsPage() {
               <Heading as="h2" size="lg">Figma Pro</Heading>
               <Text fontSize="lg" mt={2}>
                 Figma is a design software that is real-time collaborative, all-online, and free to get started with.
-                Hack Club members enjoy Pro Plan for free forever!
+                Hack Clubbers enjoy free Pro Plan while they are a student.
               </Text>
             </Box>
             <Link href="/benefits/figma" style={{ textDecoration: "none" }}>
@@ -96,20 +96,7 @@ export default function BenefitsPage() {
                 GitHub Student Developer Pack is a free GitHub program that provides students with free access to CS tools and services as long as you are a student.
               </Text>
             </Box>
-            <Link href="https://education.github.com/pack" style={{ textDecoration: "none" }}>
-              <Button colorScheme="blackAlpha" color="white" mt={3}>Claim benefit</Button>
-            </Link>
-          </Box>
-          <Box p={8} bg={useColorModeValue("blue.100", "blue.400")} borderRadius={16}>
-            <Box minH={200}>
-              <Heading as="h2" size="lg">Adafruit</Heading>
-              <Text fontSize="lg" mt={2}>
-                Adafruit Industries designs, manufactures and sells a number of electronics products, electronics components, tools and accessories.
-                If you are starting an electronics project it's a great place to visit. 
-                All Hack Clubbers can receive a 10% discount on their orders.
-              </Text>
-            </Box>
-            <Link href="/benefits/adafruit" style={{ textDecoration: "none" }}>
+            <Link href="https://education.github.com/pack" style={{ textDecoration: "none" }} isExternal>
               <Button colorScheme="blackAlpha" color="white" mt={3}>Claim benefit</Button>
             </Link>
           </Box>

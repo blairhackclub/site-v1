@@ -53,24 +53,6 @@ export default function ReplitPage() {
         </Text>
       </Container>
 
-      {/*<Container maxW="container.xl" p={12} pt={16}>
-        <Heading as="h2" size="md" color="brand.muted">BENEFITS</Heading>
-        <Heading as="h1" size="2xl" my={2}>
-          <Text as="span" color="brand.blue" style={{ whiteSpace: "pre" }}>Hacker Plan</Text> brings access to many helpful features.
-        </Heading>
-        <Text fontSize="xl" maxW="container.md">
-          With repl.it Hacker Plan, you'll have access to:
-        </Text>
-        <UnorderedList mt={2} pl={4}>
-          <ListItem>Private repls</ListItem>
-          <ListItem>Always on repls (your repls will always be running)</ListItem>
-          <ListItem>5GB of storage</ListItem>
-          <ListItem>2GB of memory</ListItem>
-          <ListItem>2 vCPUs, 4x the speed</ListItem>
-          <ListItem>Offline repls</ListItem>
-        </UnorderedList>
-      </Container>*/}
-
       <Box bg="brand.blue">
         <Container maxW="container.lg" p={12}>
         <Heading as="h1" size="2xl" my={2} color="white">
