@@ -31,7 +31,7 @@ export default function BenefitsPage() {
           Thanks to <Link href="https://hackclub.com" fontWeight="bold" color="brand.yellow" isExternal>Hack Club</Link>, club members recieve FREE perks.
         </Heading>
         <Text mt={4} color="white" fontWeight="normal">
-          By claiming benefits, you agree to the <Link href="/benefits/honorcode" fontWeight="bold">Benefits Honor Code</Link>.
+          By claiming benefits, you agree to the <Link href="/benefits/honorcode" fontWeight="bold" isExternal>Benefits Honor Code</Link>.
         </Text>
       </Header>
 

@@ -2,10 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import config from '../../data/config';
 
-import Header from '../../components/Header';
-
 import {
-  Box,
   Container,
   Heading,
   Text,
@@ -19,15 +16,9 @@ export default function HonorCodePage() {
         <title>Benefits Honor Code{config.titleSuffix}</title>
       </Head>
 
-      <Header title="Benefits Honor Code">
-        <Heading as="h2" size="md" my={2} color="white" fontWeight="normal">
-          Please follow the honor code so that we can continue to offer these amazing benefits and perks.
-        </Heading>
-      </Header>
-
       <Container maxW="container.xl" p={12} align="center">
         <Heading as="h2" size="md" color="brand.muted">BENEFITS HONOR CODE</Heading>
-        <Heading as="h1" size="2xl" my={2} color="brand.red">
+        <Heading as="h1" size="2xl" mt={2} color="brand.red">
           With great power comes great responsibility.
         </Heading>
       </Container>
@@ -35,7 +26,7 @@ export default function HonorCodePage() {
       <Container maxW="container.lg" px={12} pb={12} fontSize="lg">
         <Text my={4}>
           This is a system built on trust. 
-          Every sticker shipment request is manually reviewed by someone at HQ and 
+          Every sticker shipment request is manually reviewed by someone on our team and at HQ and 
           every sticker shipment is personally prepared, packed, and mailed 
           - with the address hand written - 
           by <Link href="https://hackclub.slack.com/team/U018B5U27CH" color="brand.orange" isExternal>@melinda</Link> from 

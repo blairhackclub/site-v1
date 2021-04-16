@@ -3,7 +3,6 @@ import Head from 'next/head';
 import config from '../../data/config';
 
 import Benefits from '../../components/Benefits';
-import Header from '../../components/Header';
 
 import {
   Box,
@@ -21,19 +20,13 @@ export default function ReplitPage() {
   return (
     <>
       <Head>
-        <title>Repl.it Hacker{config.titleSuffix}</title>
+        <title>Repl.it Hacker – Benefits{config.titleSuffix}</title>
       </Head>
 
-      <Header title="Repl.it Hacker">
-        <Heading as="h2" size="md" my={2} color="white" fontWeight="normal">
-          repl.it is an online IDE for coding in just about any language in your browser.
-        </Heading>
-      </Header>
-
       <Container maxW="container.xl" p={12} align="center">
-        <Heading as="h2" size="md" color="brand.muted">REPL.IT</Heading>
+        <Heading as="h2" size="md" color="brand.muted"><Link href="/benefits">BENEFITS</Link></Heading>
         <Heading as="h1" size="2xl" my={2} color="brand.blue">
-          Hacker Plan, free for a year.
+          Repl.it Hacker
         </Heading>
 
         <Button mt={4} colorScheme="blue" onClick={() => setModalOpen(true)}>Request Repl.it Hacker</Button>

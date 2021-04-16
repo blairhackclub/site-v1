@@ -32,7 +32,7 @@ export default function FooterComponent() {
             <Heading mb={1} size="md" color={useColorModeValue("gray.500", "gray.400")}>
               Hack Club
             </Heading>
-            <Link href="/discord">Discord</Link>
+            <Link href={socials.discord}>Discord</Link>
             <Link href="/team">Our Team</Link>
             <Link href="/team/join">Join Our Team</Link>
             <Link href="https://hackclub.com/slack" isExternal>Slack</Link>
@@ -55,7 +55,7 @@ export default function FooterComponent() {
         <Stack direction="column" spacing={3} w="auto">
           <Image h={12} w={32} src="/branding/flag-standalone.png"/>
           <SimpleGrid w={36} columns={{ base: 8, md: 4 }} py={2} spacingX={12} spacingY={2}>
-            <Link href="/discord" p={1}>
+            <Link href={socials.discord} isExternal p={1}>
               <FontAwesomeIcon icon={faDiscord} size="lg"/>
             </Link>
             <Link href={socials.github} isExternal>

@@ -2,8 +2,6 @@ import React from 'react';
 import Head from 'next/head';
 import config from '../../data/config';
 
-import Header from '../../components/Header';
-
 import {
   Box,
   Container,
@@ -21,27 +19,20 @@ import {
   ModalHeader,
   ModalCloseButton,
   ModalBody,
-  ModalFooter,
 } from '@chakra-ui/react';
 
-export default function ReplitPage() {
+export default function NotionPage() {
   const [modalOpen, setModalOpen] = React.useState(false);
   return (
     <>
       <Head>
-        <title>Notion Pro{config.titleSuffix}</title>
+        <title>Notion Pro – Benefits{config.titleSuffix}</title>
       </Head>
 
-      <Header title="Notion Pro">
-        <Heading as="h2" size="md" my={2} color="white" fontWeight="normal">
-          Notion is a popular tool for shared documents, databases, task lists, and more.
-        </Heading>
-      </Header>
-
       <Container maxW="container.xl" p={12} align="center">
-        <Heading as="h2" size="md" color="brand.muted">NOTION</Heading>
+        <Heading as="h2" size="md" color="brand.muted"><Link href="/benefits">BENEFITS</Link></Heading>
         <Heading as="h1" size="2xl" my={2} color="brand.orange">
-          Personal Pro Plan, free for students.
+          Notion Personal Pro
         </Heading>
 
         <Button mt={4} colorScheme="orange" onClick={() => setModalOpen(true)}>Redeem your subscription</Button>

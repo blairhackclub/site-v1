@@ -2,8 +2,6 @@ import React from 'react';
 import Head from 'next/head';
 import config from '../../data/config';
 
-import Header from '../../components/Header';
-
 import {
   Box,
   Container,
@@ -21,27 +19,20 @@ import {
   ModalHeader,
   ModalCloseButton,
   ModalBody,
-  ModalFooter,
 } from '@chakra-ui/react';
 
-export default function ReplitPage() {
+export default function FigmaPage() {
   const [modalOpen, setModalOpen] = React.useState(false);
   return (
     <>
       <Head>
-        <title>Figma Pro{config.titleSuffix}</title>
+        <title>Figma Pro – Benefits{config.titleSuffix}</title>
       </Head>
 
-      <Header title="Figma Pro">
-        <Heading as="h2" size="md" my={2} color="white" fontWeight="normal">
-          Figma is a design software that is real-time collaborative, all-online, and free to get started with.
-        </Heading>
-      </Header>
-
       <Container maxW="container.xl" p={12} align="center">
-        <Heading as="h2" size="md" color="brand.muted">FIGMA</Heading>
+        <Heading as="h2" size="md" color="brand.muted"><Link href="/benefits">BENEFITS</Link></Heading>
         <Heading as="h1" size="2xl" my={2} color="green.500">
-          Pro plan, free for students.
+          Figma Pro
         </Heading>
 
         <Button mt={4} colorScheme="green" onClick={() => setModalOpen(true)}>Redeem your subscription</Button>
@@ -89,7 +80,7 @@ export default function ReplitPage() {
           <ModalBody>
             <Heading as="h2" size="md">How to redeem</Heading>
             <OrderedList mt={2} mb={6}>
-              <ListItem>Head to <Link href="figma.com/education/apply">figma.com/education/apply</Link></ListItem>
+              <ListItem>Head to <Link href="https://figma.com/education/apply" isExternal>figma.com/education/apply</Link></ListItem>
               <ListItem>Click the Apply button</ListItem>
               <ListItem>For school name, enter <Code>Hack Club</Code></ListItem>
               <ListItem>For school website, enter <Code>hackclub.com</Code></ListItem>

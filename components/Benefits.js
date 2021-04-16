@@ -75,7 +75,7 @@ export default function BenefitsComponent(props) {
         //Post Webhook to discord
         let msg = await new webhook.MessageBuilder()
         .setName(titleCase(data.type)+ " Request")
-        .setColor(data.type === 'stickers' ? "#ff8c37" : "#338eda")
+        .setColor(data.type === 'stickers' ? "#a633d6" : "#338eda")
         .setTitle(`**${data.name} is requesting ${data.type}**`)
         .setURL(`https://airtable.com/${tableId}/${id}?blocks=hide`)
         .addField('Discord Tag', data.discord)
