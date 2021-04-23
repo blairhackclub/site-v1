@@ -49,9 +49,10 @@ export default function NavbarComponent() {
             pt={[4, 4, 0, 0]}
           >
             <ColorModeToggle color={useColorModeValue("brand.red", "white")}/>
-            <MenuItem to="https://www.notion.so/blairhackclub/Schedule-e5fc831bcaf942129bb6ea2621b0dfa0" isExternal>SCHEDULE</MenuItem>
-            <MenuItem to="/benefits">BENEFITS</MenuItem> {/* for testing */}
-            <MenuItem to="/workshops">WORKSHOPS</MenuItem>
+            {/* <MenuItem to="https://www.notion.so/blairhackclub/Schedule-e5fc831bcaf942129bb6ea2621b0dfa0" isExternal>SCHEDULE</MenuItem>
+            <MenuItem to="/benefits">BENEFITS</MenuItem>
+            <MenuItem to="/workshops">WORKSHOPS</MenuItem> */}
+            <MenuItem to="/team/join">JOIN OUR TEAM</MenuItem>
             <MenuItem to={socials.discord} type="button" isExternal>JOIN</MenuItem>
           </Stack>
         </Box>
