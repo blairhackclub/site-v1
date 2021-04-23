@@ -132,13 +132,24 @@ export default function BenefitsPage() {
         <Heading as="h2" size="md" color="brand.muted">THANKS TO OUR SPONSORS</Heading>
         <Stack direction="row" spacing={8} justify="center" m={4}>
           <Flex align="center" justify="center">
-            <Link href="https://hackclub.com" isExternal><Image w={24} h="auto" src="https://assets.hackclub.com/icon-rounded.png"/></Link>
-          </Flex>
-            <Flex align="center" justify="center">
-          <Link href="https://stickermule.com" isExternal><Image w={36} h="auto" src="https://cdn.freebiesupply.com/logos/large/2x/sticker-mule-logo-svg-vector.svg"/></Link>
+            <Link href="https://hackclub.com" isExternal>
+              <Image w={24} h="auto" src="/images/logos/hackclub.png" alt="Hack Club"/>
+            </Link>
           </Flex>
           <Flex align="center" justify="center">
-            <Link href="https://replit.com" isExternal><Image w={36} h="auto" src="https://lh3.googleusercontent.com/wy5o0ijAE-l9Ru4g2ft84wjHzhURtzumh_M36frnTDOSTNsXivUBZQgu4cWQXs4BQ0is0yepDESHAtFfpSnyVrwHtx2qA4U6f_2-"/></Link>
+            <Link href="https://stickermule.com" isExternal>
+              <Image w={36} h="auto" src="/images/logos/stickermule.svg" alt="Stickermule"/>
+            </Link>
+          </Flex>
+          <Flex align="center" justify="center">
+            <Link href="https://replit.com" isExternal>
+              <Image w={36} h="auto" src="/images/logos/replit.png" alt="Replit"/>
+            </Link>
+          </Flex>
+          <Flex align="center" justify="center">
+            <Link href="https://notion.so" isExternal>
+              <Image w={24} h="auto" src="/images/logos/notion.webp" alt="Notion"/>
+            </Link>
           </Flex>
         </Stack>
       </Container>

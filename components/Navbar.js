@@ -53,7 +53,7 @@ export default function NavbarComponent() {
             <MenuItem to="/benefits">BENEFITS</MenuItem>
             <MenuItem to="/workshops">WORKSHOPS</MenuItem> */}
             <MenuItem to="/team/join">JOIN OUR TEAM</MenuItem>
-            <MenuItem to={socials.discord} type="button" isExternal>JOIN</MenuItem>
+            <MenuItem to={socials.discord} type="button" isExternal>DISCORD</MenuItem>
           </Stack>
         </Box>
       </Flex>

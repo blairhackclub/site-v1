@@ -2,7 +2,7 @@ import '../styles/globals.css';
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import Head from 'next/head';
 import config from '../data/config';
-import { ChakraProvider } from "@chakra-ui/react";
+import { ChakraProvider, Fade } from "@chakra-ui/react";
 import theme from '../lib/theme';
 
 import Navbar from '../components/Navbar';
@@ -17,9 +17,11 @@ function MyApp({ Component, pageProps }) {
       </Head>
       
       <ChakraProvider theme={theme} resetCSS>
-        <Navbar/>
-        <Component {...pageProps}/>
-        <Footer/>
+        <Fade in={true}>
+          <Navbar/>
+          <Component {...pageProps}/>
+          <Footer/>
+        </Fade>
       </ChakraProvider>
     </>
   );

@@ -29,7 +29,7 @@ export default function Home() {
         <title>Home{config.titleSuffix}</title>
       </Head>
 
-      <Box bg="brand.red">
+      <Box bg={"brand.red"}>
         <Container maxW="container.lg" px={8} py={24} align="center">
           <Heading as="h1" size="2xl" my={2} color="white">
             Blair Hack Club
@@ -57,7 +57,8 @@ export default function Home() {
       <Container maxW="container.xl" px={12} py={6}>
         <Flex direction={{ base: "column", md: "row" }}>
           <Image 
-            src="" fallbackSrc="https://via.placeholder.com/300"
+            src="/images/blair-emptyhall.png"
+            fallbackSrc="https://via.placeholder.com/300"
             boxSize={{ base: "100%", md: "50%" }}
             borderRadius={24}
             userSelect="none"
@@ -143,7 +144,7 @@ export default function Home() {
           Join the Discord for the latest updates!
         </Text>
         <Link href={socials.discord} style={{ textDecoration: "none" }}>
-          <Button colorScheme="blue" mt={4}>Join the Discord</Button>
+          <Button colorScheme="blue" mt={4} isExternal>Join the Discord</Button>
         </Link>
       </Container>
 
@@ -167,6 +168,20 @@ export default function Home() {
           )}
         </Accordion>
       </Container>
+      
+      {/* Floating message */}
+      <Box 
+        position="fixed" bottom={6} right={6} 
+        p={4} w="256px" bg="gray.200" borderRadius="xl"
+        align="center"
+      >
+        {/* <Image w="200px" h="auto" src="/orpheus/confused-orpheus.png" borderRadius="xl"/> */}
+        <Heading size="md" mt={1}>Starting Fall 2021!</Heading>
+        <Text mt={2}>Join our Discord to get the latest updates and info.</Text>
+        <Link href={socials.discord} style={{ textDecoration: "none" }}>
+          <Button size="sm" colorScheme="blue" mt={2}>Discord</Button>
+        </Link>
+      </Box>
     </>
   );
 }

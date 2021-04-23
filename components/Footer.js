@@ -35,7 +35,7 @@ export default function FooterComponent() {
             <Link href={socials.discord}>Discord</Link>
             <Link href="/team">Our Team</Link>
             <Link href="/team/join">Join Our Team</Link>
-            <Link href="https://hackclub.com/slack" isExternal>Slack</Link>
+            <Link href="https://hackclub.com/slack" isExternal>HQ Slack</Link>
           </Stack>
 
           <Stack direction="column" spacing={3} flex={1} w={36}>
