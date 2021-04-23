@@ -3,8 +3,6 @@ import Head from 'next/head';
 import config from '../../data/config';
 import stickers from '../../data/stickers';
 
-import Header from '../../components/Header';
-
 import {
   Box,
   Flex,
@@ -12,33 +10,49 @@ import {
   Stack,
   Heading,
   Text,
+  Code,
+  Tag,
   Button,
   Link,
   Image,
   SimpleGrid,
+  OrderedList,
+  ListItem,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalCloseButton,
+  ModalBody,
   useColorModeValue,
 } from '@chakra-ui/react';
 
 export default function BenefitsPage() {
+  const [notionOpen, setNotionOpen] = React.useState(false);
+  const [figmaOpen, setFigmaOpen] = React.useState(false);
+
   return (
     <>
       <Head>
         <title>Benefits{config.titleSuffix}</title>
       </Head>
 
-      <Header title="Benefits">
-        <Heading as="h2" size="md" my={2} color="white" fontWeight="normal">
-          Thanks to <Link href="https://hackclub.com" fontWeight="bold" color="brand.yellow" isExternal>Hack Club</Link>, club members recieve FREE perks.
+      <Container maxW="container.xl" p={12} align="center">
+        <Heading as="h1" size="2xl" my={2} color="brand.red">
+          Benefits
         </Heading>
-        <Text mt={4} color="white" fontWeight="normal">
-          By claiming benefits, you agree to the <Link href="/benefits/honorcode" fontWeight="bold" isExternal>Benefits Honor Code</Link>.
+        <Heading as="h2" size="md" my={2} fontWeight="normal">
+        Thanks to <Link href="https://hackclub.com" fontWeight="bold" color="brand.orange" isExternal>Hack Club</Link>, club members recieve FREE perks.
+        </Heading>
+        <Text mt={4}>
+          By claiming benefits, you agree to the <Link href="/benefits/honorcode" fontWeight="bold" color="brand.red" isExternal>Benefits Honor Code</Link>.
         </Text>
-      </Header>
+      </Container>
 
       <Container maxW="container.lg">
         <SimpleGrid columns={{ base: 1, md: 2 }} spacing={8} py={8} px={4}>
-          <Box p={8} bg={useColorModeValue("blue.100", "blue.400")} borderRadius={16}>
-            <Box minH={200}>
+          <Box p={8} bg={useColorModeValue("gray.50", "gray.900")} boxShadow="xs" borderRadius="lg">
+            <Box minH={200} mb={2}>
               <Heading as="h2" size="lg">Stickers</Heading>
               <Text fontSize="lg" mt={2}>Get free exclusive Hack Club stickers mailed straight to your door!</Text>
               <Stack direction="row" mt={2} spacing={4} justify="center">
@@ -50,67 +64,65 @@ export default function BenefitsPage() {
               </Stack>
             </Box>
             <Link href="/benefits/stickers" style={{ textDecoration: "none" }}>
-              <Button colorScheme="blackAlpha" color="white" mt={3}>Claim benefit</Button>
+              <Button colorScheme="red" color="white" mt={3}>Learn more</Button>
             </Link>
           </Box>
-          <Box p={8} bg={useColorModeValue("blue.100", "blue.400")} borderRadius={16}>
-            <Box minH={200}>
-              <Heading as="h2" size="lg">Repl.it Hacker</Heading>
+          <Box p={8} bg={useColorModeValue("gray.50", "gray.900")} boxShadow="xs" borderRadius="lg">
+            <Box minH={200} mb={2}>
+              <Heading as="h2" size="lg">Repl.it</Heading>
               <Text fontSize="lg" mt={2}>
-                repl.it is an online IDE for coding in just about any language in your browser. We’ve secured Hacker plans for all Hack Clubbers, free for a year!
+                An online IDE for coding in just about any language in your browser.
               </Text>
-              <Flex align="center" justify="center" m={4}>
-                <Image w={40} src="https://lever-client-logos.s3.us-west-2.amazonaws.com/e99ed897-4b15-4142-acb5-615c2df6b3c2-1615515751109.png"/>
-              </Flex>
+              <Text fontSize="lg" mt={3}>
+                <Tag variant="solid" colorScheme="teal" fontWeight="bold" mr={2}>Benefits</Tag>
+                Free 1 year subscription to Repl.it Hacker.
+              </Text>
             </Box>
             <Link href="/benefits/replit" style={{ textDecoration: "none" }}>
-              <Button colorScheme="blackAlpha" color="white" mt={3}>Claim benefit</Button>
+              <Button colorScheme="red" color="white" mt={3}>Learn more</Button>
             </Link>
           </Box>
-          <Box p={8} bg={useColorModeValue("blue.100", "blue.400")} borderRadius={16}>
-            <Box minH={200}>
-              <Heading as="h2" size="lg">Notion Pro</Heading>
+          <Box p={8} bg={useColorModeValue("gray.50", "gray.900")} boxShadow="xs" borderRadius="lg">
+            <Box minH={200} mb={2}>
+              <Heading as="h2" size="lg">Notion</Heading>
               <Text fontSize="lg" mt={2}>
-                Notion is a popular tool for shared documents, databases, task lists, and more.
-                It's great for planning projects, or even just to organize your lifestyle.
-                Hack Clubbers get free Personal Pro Plan in their workspaces while they are a student.
+                A popular tool for planning projects, or even just to organize your lifestyle.
               </Text>
-              <Flex align="center" justify="center" m={4}>
-                <Image w={20} src="https://cdn.iconscout.com/icon/free/png-256/notion-1693557-1442598.png"/>
-              </Flex>
+              <Text fontSize="lg" mt={3}>
+                <Tag variant="solid" colorScheme="teal" fontWeight="bold" mr={2}>Benefits</Tag>
+                Free Personal Pro plan in workspaces for students. 
+              </Text>
             </Box>
-            <Link href="/benefits/notion" style={{ textDecoration: "none" }}>
-              <Button colorScheme="blackAlpha" color="white" mt={3}>Claim benefit</Button>
-            </Link>
+
+            <Button colorScheme="red" color="white" mt={3} onClick={() => setNotionOpen(true)}>Redeem</Button>
           </Box>
-          <Box p={8} bg={useColorModeValue("blue.100", "blue.400")} borderRadius={16}>
-            <Box minH={200}>
-              <Heading as="h2" size="lg">Figma Pro</Heading>
+          <Box p={8} bg={useColorModeValue("gray.50", "gray.900")} boxShadow="xs" borderRadius="lg">
+            <Box minH={200} mb={2}>
+              <Heading as="h2" size="lg">Figma</Heading>
               <Text fontSize="lg" mt={2}>
-                Figma is a design software that is real-time collaborative, all-online, and free to get started with.
-                Hack Clubbers enjoy free Pro Plan while they are a student.
+                A design software that is real-time collaborative, all-online, and free to get started with.
               </Text>
-              <Flex align="center" justify="center" m={4}>
-                <Image w={20} src="https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg"/>
-              </Flex>
+              <Text fontSize="lg" mt={3}>
+                <Tag variant="solid" colorScheme="teal" fontWeight="bold" mr={2}>Benefits</Tag>
+                Free Figma Education plan for students.
+              </Text>
             </Box>
-            <Link href="/benefits/figma" style={{ textDecoration: "none" }}>
-              <Button colorScheme="blackAlpha" color="white" mt={3}>Claim benefit</Button>
-            </Link>
+
+            <Button colorScheme="red" color="white" mt={3} onClick={() => setFigmaOpen(true)}>Redeem</Button>
           </Box>
-          <Box p={8} bg={useColorModeValue("blue.100", "blue.400")} borderRadius={16}>
-            <Box minH={200}>
+          <Box p={8} bg={useColorModeValue("gray.50", "gray.900")} boxShadow="xs" borderRadius="lg">
+            <Box minH={200} mb={2}>
               <Heading as="h2" size="lg" mt={2}>GitHub Student Developer Pack</Heading>
-              <Text fontSize="lg">
-                GitHub Student Developer Pack is a free GitHub program that provides students with 
-                free access to CS tools and services as long as you are a student.
+              <Text fontSize="lg" mt={2}>
+                A free GitHub program that provides students with free access to CS tools and services as long as you are a student.
               </Text>
-              <Flex align="center" justify="center" m={4}>
-                <Image w={20} src="https://education.github.com/assets/sdp-backpack-a64038716bf134f45e809ff86b9611fb97e41bbd2ccfa3181da73cf164d3c200.png"/>
-              </Flex>
+              <Text fontSize="lg" mt={3}>
+                <Tag variant="solid" colorScheme="teal" fontWeight="bold" mr={2}>Benefits</Tag>
+                Access and free subscriptions to hundreds of CS tools and services for students.
+              </Text>
             </Box>
             <Link href="https://education.github.com/pack" style={{ textDecoration: "none" }} isExternal>
-              <Button colorScheme="blackAlpha" color="white" mt={3}>Claim benefit</Button>
+              <Button colorScheme="red" color="white" mt={3}>Learn more</Button>
             </Link>
           </Box>
         </SimpleGrid>
@@ -130,6 +142,62 @@ export default function BenefitsPage() {
           </Flex>
         </Stack>
       </Container>
+      
+
+      {/* NOTION */}
+      <Modal isOpen={notionOpen} onClose={() => setNotionOpen(false)}>
+        <ModalOverlay />   
+        <ModalContent>
+          <ModalHeader>
+            Redeem Notion Personal Pro
+          </ModalHeader>
+          <ModalCloseButton />
+
+          <ModalBody>
+            <Heading as="h2" size="md">To redeem your Notion subscription</Heading>
+            <Text>(You must be using a desktop computer to do this)</Text>
+            <OrderedList mt={2} mb={6}>
+              <ListItem>If you haven’t made an account, go for it.</ListItem>
+              <ListItem>In your left sidebar, go to <Code>Settings & Members</Code></ListItem>
+              <ListItem>Next, click on <Code>Upgrade</Code> (or <Code>Plans</Code> if you're already on a plan)</ListItem>
+              <ListItem>Scroll down to the <Code>Students & Educators</Code> section and click <Code>Get free Education plan</Code></ListItem>
+              <ListItem>In the pop-up that appears, type promo code <Code>HACK</Code> and press Submit</ListItem>
+              <ListItem>You’ll get automatic access to all the premium features! ✨</ListItem>
+            </OrderedList>
+            
+            <Heading as="h2" size="md">Use Notion with your team</Heading>
+            <OrderedList mt={2} mb={6}>
+              <ListItem>Create a homepage for your team in your sidebar</ListItem>
+              <ListItem>Add all other pages you want your team to access inside this homepage</ListItem>
+              <ListItem>Click <Code>Share</Code> at the top right of your homepage, then <Code>Invite a Person</Code></ListItem>
+              <ListItem>Add all your teammates with their email addresses and press <Code>Invite</Code></ListItem>
+              <ListItem>They’ll all receive an email invite to the page so you can collaborate together!</ListItem>
+            </OrderedList>
+          </ModalBody>
+        </ModalContent>
+      </Modal>
+      
+      {/* FIGMA */}
+      <Modal isOpen={figmaOpen} onClose={() => setFigmaOpen(false)}>
+        <ModalOverlay />   
+        <ModalContent>
+          <ModalHeader>
+            Redeem Figma Pro
+          </ModalHeader>
+          <ModalCloseButton />
+
+          <ModalBody>
+            <Heading as="h2" size="md">How to redeem</Heading>
+            <OrderedList mt={2} mb={6}>
+              <ListItem>Head to <Link href="https://figma.com/education/apply" isExternal>figma.com/education/apply</Link></ListItem>
+              <ListItem>Click the Apply button</ListItem>
+              <ListItem>For school name, enter <Code>Hack Club</Code></ListItem>
+              <ListItem>For school website, enter <Code>hackclub.com</Code></ListItem>
+              <ListItem>Have fun!!</ListItem>
+            </OrderedList>
+          </ModalBody>
+        </ModalContent>
+      </Modal>
     </>
   )
 }

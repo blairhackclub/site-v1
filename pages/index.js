@@ -20,6 +20,8 @@ import {
   AccordionIcon,
 } from '@chakra-ui/react';
 
+import socials from '../data/socials';
+
 export default function Home() {
   return (
     <>
@@ -140,7 +142,7 @@ export default function Home() {
           Our club will run at Blair starting the 2021-2022 school year.
           Join the Discord for the latest updates!
         </Text>
-        <Link href="/discord" style={{ textDecoration: "none" }}>
+        <Link href={socials.discord} style={{ textDecoration: "none" }}>
           <Button colorScheme="blue" mt={4}>Join the Discord</Button>
         </Link>
       </Container>
