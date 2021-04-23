@@ -49,7 +49,7 @@ export default function JoinTeam(){
 										</Container>
 									</Box>
 									<Link href={socials.discord} style={{ textDecoration: "none" }}>
-										<Button colorScheme="red" color="white">Contact us on discord</Button>
+										<Button colorScheme="red" mt={3} color="white">Contact us on discord</Button>
 									</Link>
 								</Box>
 								<Box p={8} bg={useColorModeValue("gray.50", "gray.900")} boxShadow="xs" borderRadius="lg">
@@ -63,7 +63,7 @@ export default function JoinTeam(){
 										</Container>
 									</Box>
 									<Link href={socials.discord} style={{ textDecoration: "none" }}>
-										<Button colorScheme="red" color="white">Contact us on discord</Button>
+										<Button colorScheme="red" mt={5} color="white">Contact us on discord</Button>
 									</Link>
 								</Box>
 								<Box p={8} bg={useColorModeValue("gray.50", "gray.900")} boxShadow="xs" borderRadius="lg">
@@ -72,13 +72,13 @@ export default function JoinTeam(){
 										<Text fontSize="lg" mt={2}>
 											Help us code/design our website + other cool stuff!
 										</Text>
-										<Container align="center">
-											<Image h={125}  src={officers.engineer.image}/>
+										<Container mt={3} align="center">
+											<Image h={125} src={officers.engineer.image}/>
 										</Container>
 									</Box>
 
 									<Link href={socials.discord} style={{ textDecoration: "none" }}>
-										<Button colorScheme="red" color="white">Contact us on discord</Button>
+										<Button colorScheme="red" mt={3} color="white">Contact us on discord</Button>
 									</Link>
 								</Box>
 							</SimpleGrid>
