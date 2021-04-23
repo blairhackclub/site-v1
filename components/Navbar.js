@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/Link';
 
 import {
   Box,
@@ -6,7 +7,7 @@ import {
   Stack,
   Text,
   Button,
-  Link,
+  Link as CLink,
   Image,
   useColorModeValue,
 } from '@chakra-ui/react';
@@ -64,8 +65,10 @@ export default function NavbarComponent() {
 function Logo({ ...rest }) {
   return (
     <Box px={8} {...rest}>
-      <Link href="/">
-        <Image h={16} src="/branding/flag-orpheus-top.png"/>
+      <Link passHref href="/">
+        <CLink>
+          <Image h={16} src="/branding/flag-orpheus-top.png"/>
+        </CLink>
       </Link>
     </Box>
   );
@@ -89,19 +92,23 @@ function MenuItem(props) {
   // Button menu item
   if (type === 'button') {
     return (
-      <Link href={to} style={{ textDecoration: "none" }} {...rest}>
-        <Button size="sm" colorScheme="whiteAlpha" color="white">
-          {children}
-        </Button>
-      </Link>
+        <Link passHref href={to}>
+          <CLink style={{ textDecoration: "none" }} {...rest}>
+            <Button size="sm" colorScheme="whiteAlpha" color="white">
+              {children}
+            </Button>
+          </CLink>
+        </Link>
     );
   }
   
   return (
-    <Link href={to} _hover={{ color: "gray.300" }} fontWeight="semibold" style={{ textDecoration: "none" }} {...rest}>
-      <Text display="block">
-        {children}
-      </Text>
+    <Link passHref href={to}>
+      <CLink _hover={{ color: "gray.300" }} fontWeight="semibold" style={{ textDecoration: "none" }} {...rest}>
+        <Text display="block">
+          {children}
+        </Text>
+      </CLink>
     </Link>
   );
 }

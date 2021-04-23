@@ -2,6 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import config from '../../data/config';
 import stickers from '../../data/stickers';
+import Link from 'next/Link';
 
 import {
   Box,
@@ -13,7 +14,7 @@ import {
   Code,
   Tag,
   Button,
-  Link,
+  Link as CLink,
   Image,
   SimpleGrid,
   OrderedList,
@@ -42,10 +43,10 @@ export default function BenefitsPage() {
           Benefits
         </Heading>
         <Heading as="h2" size="md" my={2} fontWeight="normal">
-        Thanks to <Link href="https://hackclub.com" fontWeight="bold" color="brand.orange" isExternal>Hack Club</Link>, club members recieve FREE perks.
+        Thanks to <CLink href="https://hackclub.com" fontWeight="bold" color="brand.orange" isExternal>Hack Club</CLink>, club members recieve FREE perks.
         </Heading>
         <Text mt={4}>
-          By claiming benefits, you agree to the <Link href="/benefits/honorcode" fontWeight="bold" color="brand.red" isExternal>Benefits Honor Code</Link>.
+          By claiming benefits, you agree to the <CLink href="/benefits/honorcode" fontWeight="bold" color="brand.red" isExternal>Benefits Honor Code</CLink>.
         </Text>
       </Container>
 
@@ -63,7 +64,7 @@ export default function BenefitsPage() {
                 )}
               </Stack>
             </Box>
-            <Link href="/benefits/stickers" style={{ textDecoration: "none" }}>
+            <Link passHref href="/benefits/stickers" style={{ textDecoration: "none" }}>
               <Button colorScheme="red" color="white" mt={3}>Learn more</Button>
             </Link>
           </Box>
@@ -78,7 +79,7 @@ export default function BenefitsPage() {
                 Free 1 year subscription to Repl.it Hacker.
               </Text>
             </Box>
-            <Link href="/benefits/replit" style={{ textDecoration: "none" }}>
+            <Link passHref href="/benefits/replit" style={{ textDecoration: "none" }}>
               <Button colorScheme="red" color="white" mt={3}>Learn more</Button>
             </Link>
           </Box>
@@ -121,9 +122,9 @@ export default function BenefitsPage() {
                 Access and free subscriptions to hundreds of CS tools and services for students.
               </Text>
             </Box>
-            <Link href="https://education.github.com/pack" style={{ textDecoration: "none" }} isExternal>
+            <CLink href="https://education.github.com/pack" style={{ textDecoration: "none" }} isExternal>
               <Button colorScheme="red" color="white" mt={3}>Learn more</Button>
-            </Link>
+            </CLink>
           </Box>
         </SimpleGrid>
       </Container>
@@ -132,24 +133,24 @@ export default function BenefitsPage() {
         <Heading as="h2" size="md" color="brand.muted">THANKS TO OUR SPONSORS</Heading>
         <Stack direction="row" spacing={8} justify="center" m={4}>
           <Flex align="center" justify="center">
-            <Link href="https://hackclub.com" isExternal>
+            <CLink href="https://hackclub.com" isExternal>
               <Image w={24} h="auto" src="/images/logos/hackclub.png" alt="Hack Club"/>
-            </Link>
+            </CLink>
           </Flex>
           <Flex align="center" justify="center">
-            <Link href="https://stickermule.com" isExternal>
+            <CLink href="https://stickermule.com" isExternal>
               <Image w={36} h="auto" src="/images/logos/stickermule.svg" alt="Stickermule"/>
-            </Link>
+            </CLink>
           </Flex>
           <Flex align="center" justify="center">
-            <Link href="https://replit.com" isExternal>
+            <CLink href="https://replit.com" isExternal>
               <Image w={36} h="auto" src="/images/logos/replit.png" alt="Replit"/>
-            </Link>
+            </CLink>
           </Flex>
           <Flex align="center" justify="center">
-            <Link href="https://notion.so" isExternal>
+            <CLink href="https://notion.so" isExternal>
               <Image w={24} h="auto" src="/images/logos/notion.webp" alt="Notion"/>
-            </Link>
+            </CLink>
           </Flex>
         </Stack>
       </Container>
@@ -200,7 +201,7 @@ export default function BenefitsPage() {
           <ModalBody>
             <Heading as="h2" size="md">How to redeem</Heading>
             <OrderedList mt={2} mb={6}>
-              <ListItem>Head to <Link href="https://figma.com/education/apply" isExternal>figma.com/education/apply</Link></ListItem>
+              <ListItem>Head to <CLink href="https://figma.com/education/apply" isExternal>figma.com/education/apply</CLink></ListItem>
               <ListItem>Click the Apply button</ListItem>
               <ListItem>For school name, enter <Code>Hack Club</Code></ListItem>
               <ListItem>For school website, enter <Code>hackclub.com</Code></ListItem>
