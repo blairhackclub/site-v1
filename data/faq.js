@@ -9,7 +9,7 @@ export default [
   },
   {
     question: "When and where do meetings take place?",
-    answer: "Our club will run at the start of the 2021-2022 school year. The meeting date/time is currently TBD. Join the Discord (blair.hackclub.com/discord) to stay tuned!"
+    answer: "Our club will run at the start of the 2021-2022 school year. The meeting date/time is currently TBD. Join the Discord (https://discord.gg/GFHPKUSnj5) to stay tuned!"
   },
   {
     question: "Does it cost money to join?",

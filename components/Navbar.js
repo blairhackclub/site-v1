@@ -1,5 +1,5 @@
 import React from 'react';
-import Link from 'next/link';
+import NextLink from 'next/link';
 
 import {
   Box,
@@ -7,7 +7,7 @@ import {
   Stack,
   Text,
   Button,
-  Link as CLink,
+  Link,
   Image,
   useColorModeValue,
 } from '@chakra-ui/react';
@@ -32,7 +32,7 @@ export default function NavbarComponent() {
         color="white" bg="brand.red"
       >
         {/* Hidden Logo (takes up space for fixed pos logo) */}
-        <Logo visibility="hidden"/>
+        <Logo visibility="hidden" setIsOpen={setIsOpen}/>
 
         {/* Toggle */}
         <Toggle toggle={toggle} isOpen={isOpen}/>
@@ -47,14 +47,13 @@ export default function NavbarComponent() {
             align="center"
             justify={["center", "space-between", "flex-end", "flex-end"]}
             direction={["column", "row", "row", "row"]}
-            pt={[4, 4, 0, 0]}
           >
             <ColorModeToggle color={useColorModeValue("brand.red", "white")}/>
-            {/* <MenuItem to="https://www.notion.so/blairhackclub/Schedule-e5fc831bcaf942129bb6ea2621b0dfa0" isExternal>SCHEDULE</MenuItem>
-            <MenuItem to="/benefits">BENEFITS</MenuItem>
-            <MenuItem to="/workshops">WORKSHOPS</MenuItem> */}
-            <MenuItem to="/team/join">JOIN OUR TEAM</MenuItem>
-            <MenuItem to={socials.discord} type="button" isExternal>DISCORD</MenuItem>
+            {/* <MenuItem to="https://www.notion.so/blairhackclub/Schedule-e5fc831bcaf942129bb6ea2621b0dfa0" setIsOpen={setIsOpen} isExternal>SCHEDULE</MenuItem>
+            <MenuItem to="/benefits" setIsOpen={setIsOpen}>BENEFITS</MenuItem>
+            <MenuItem to="/workshops" setIsOpen={setIsOpen}>WORKSHOPS</MenuItem> */}
+            <MenuItem to="/team/join" setIsOpen={setIsOpen}>JOIN OUR TEAM</MenuItem>
+            <MenuItem to={socials.discord} type="button" setIsOpen={setIsOpen} isExternal>DISCORD</MenuItem>
           </Stack>
         </Box>
       </Flex>
@@ -62,14 +61,14 @@ export default function NavbarComponent() {
   )
 }
 
-function Logo({ ...rest }) {
+function Logo({ setIsOpen, ...rest }) {
   return (
     <Box px={8} {...rest}>
-      <Link passHref href="/">
-        <CLink>
+      <NextLink href="/" passHref>
+        <Link onClick={() => setIsOpen(false)}>
           <Image h={16} src="/branding/flag-orpheus-top.png"/>
-        </CLink>
-      </Link>
+        </Link>
+      </NextLink>
     </Box>
   );
 }
@@ -87,28 +86,28 @@ function Toggle(props) {
 }
 
 function MenuItem(props) {
-  const { children, to = "/", tooltip, type, ...rest } = props;
+  const { children, to = "/", tooltip, type, setIsOpen, ...rest } = props;
 
   // Button menu item
   if (type === 'button') {
     return (
-        <Link passHref href={to}>
-          <CLink style={{ textDecoration: "none" }} {...rest}>
+        <NextLink href={to} passHref>
+          <Link style={{ textDecoration: "none" }} onClick={() => setIsOpen(false)} {...rest}>
             <Button size="sm" colorScheme="whiteAlpha" color="white">
               {children}
             </Button>
-          </CLink>
-        </Link>
+          </Link>
+        </NextLink>
     );
   }
   
   return (
-    <Link passHref href={to}>
-      <CLink _hover={{ color: "gray.300" }} fontWeight="semibold" style={{ textDecoration: "none" }} {...rest}>
+    <NextLink href={to} passHref>
+      <Link _hover={{ color: "gray.300" }} fontWeight="semibold" style={{ textDecoration: "none" }} onClick={() => setIsOpen(false)} {...rest}>
         <Text display="block">
           {children}
         </Text>
-      </CLink>
-    </Link>
+      </Link>
+    </NextLink>
   );
 }

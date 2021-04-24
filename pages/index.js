@@ -18,6 +18,13 @@ import {
   AccordionButton,
   AccordionPanel,
   AccordionIcon,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
 } from '@chakra-ui/react';
 
 import socials from '../data/socials';
@@ -143,8 +150,8 @@ export default function Home() {
           Our club will run at Blair starting the 2021-2022 school year.
           Join the Discord for the latest updates!
         </Text>
-        <Link href={socials.discord} style={{ textDecoration: "none" }}>
-          <Button colorScheme="blue" mt={4} isExternal>Join the Discord</Button>
+        <Link href={socials.discord} style={{ textDecoration: "none" }} isExternal>
+          <Button colorScheme="blue" mt={4}>Join the Discord</Button>
         </Link>
       </Container>
 
@@ -168,20 +175,6 @@ export default function Home() {
           )}
         </Accordion>
       </Container>
-      
-      {/* Floating message */}
-      <Box 
-        position="fixed" bottom={6} right={6} 
-        p={4} w="256px" bg="gray.200" borderRadius="xl"
-        align="center"
-      >
-        {/* <Image w="200px" h="auto" src="/orpheus/confused-orpheus.png" borderRadius="xl"/> */}
-        <Heading size="md" mt={1}>Starting Fall 2021!</Heading>
-        <Text mt={2}>Join our Discord to get the latest updates and info.</Text>
-        <Link href={socials.discord} style={{ textDecoration: "none" }}>
-          <Button size="sm" colorScheme="blue" mt={2}>Discord</Button>
-        </Link>
-      </Box>
     </>
   );
 }

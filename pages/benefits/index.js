@@ -1,8 +1,9 @@
 import React from 'react';
 import Head from 'next/head';
+import NextLink from 'next/link';
+
 import config from '../../data/config';
 import stickers from '../../data/stickers';
-import Link from 'next/link';
 
 import {
   Box,
@@ -14,7 +15,7 @@ import {
   Code,
   Tag,
   Button,
-  Link as CLink,
+  Link,
   Image,
   SimpleGrid,
   OrderedList,
@@ -43,10 +44,10 @@ export default function BenefitsPage() {
           Benefits
         </Heading>
         <Heading as="h2" size="md" my={2} fontWeight="normal">
-        Thanks to <CLink href="https://hackclub.com" fontWeight="bold" color="brand.orange" isExternal>Hack Club</CLink>, club members recieve FREE perks.
+        Thanks to <Link href="https://hackclub.com" fontWeight="bold" color="brand.orange" isExternal>Hack Club</Link>, club members recieve FREE perks.
         </Heading>
         <Text mt={4}>
-          By claiming benefits, you agree to the <CLink href="/benefits/honorcode" fontWeight="bold" color="brand.red" isExternal>Benefits Honor Code</CLink>.
+          By claiming benefits, you agree to the <Link href="/benefits/honorcode" fontWeight="bold" color="brand.red" isExternal>Benefits Honor Code</Link>.
         </Text>
       </Container>
 
@@ -64,9 +65,9 @@ export default function BenefitsPage() {
                 )}
               </Stack>
             </Box>
-            <Link passHref href="/benefits/stickers" style={{ textDecoration: "none" }}>
-              <Button colorScheme="red" color="white" mt={3}>Learn more</Button>
-            </Link>
+            <NextLink href="/benefits/stickers" passHref>
+              <Button colorScheme="red" bg={useColorModeValue("auto", "red.400")} color="white" mt={3}>Learn more</Button>
+            </NextLink>
           </Box>
           <Box p={8} bg={useColorModeValue("gray.50", "gray.900")} boxShadow="xs" borderRadius="lg">
             <Box minH={200} mb={2}>
@@ -79,9 +80,9 @@ export default function BenefitsPage() {
                 Free 1 year subscription to Repl.it Hacker.
               </Text>
             </Box>
-            <Link passHref href="/benefits/replit" style={{ textDecoration: "none" }}>
-              <Button colorScheme="red" color="white" mt={3}>Learn more</Button>
-            </Link>
+            <NextLink href="/benefits/replit" passHref>
+              <Button colorScheme="red" bg={useColorModeValue("auto", "red.400")} color="white" mt={3}>Learn more</Button>
+            </NextLink>
           </Box>
           <Box p={8} bg={useColorModeValue("gray.50", "gray.900")} boxShadow="xs" borderRadius="lg">
             <Box minH={200} mb={2}>
@@ -95,7 +96,7 @@ export default function BenefitsPage() {
               </Text>
             </Box>
 
-            <Button colorScheme="red" color="white" mt={3} onClick={() => setNotionOpen(true)}>Redeem</Button>
+            <Button colorScheme="red" bg={useColorModeValue("auto", "red.400")} color="white" mt={3} onClick={() => setNotionOpen(true)}>Redeem</Button>
           </Box>
           <Box p={8} bg={useColorModeValue("gray.50", "gray.900")} boxShadow="xs" borderRadius="lg">
             <Box minH={200} mb={2}>
@@ -109,7 +110,7 @@ export default function BenefitsPage() {
               </Text>
             </Box>
 
-            <Button colorScheme="red" color="white" mt={3} onClick={() => setFigmaOpen(true)}>Redeem</Button>
+            <Button colorScheme="red" bg={useColorModeValue("auto", "red.400")} color="white" mt={3} onClick={() => setFigmaOpen(true)}>Redeem</Button>
           </Box>
           <Box p={8} bg={useColorModeValue("gray.50", "gray.900")} boxShadow="xs" borderRadius="lg">
             <Box minH={200} mb={2}>
@@ -122,9 +123,9 @@ export default function BenefitsPage() {
                 Access and free subscriptions to hundreds of CS tools and services for students.
               </Text>
             </Box>
-            <CLink href="https://education.github.com/pack" style={{ textDecoration: "none" }} isExternal>
-              <Button colorScheme="red" color="white" mt={3}>Learn more</Button>
-            </CLink>
+            <Link href="https://education.github.com/pack" style={{ textDecoration: "none" }} isExternal>
+              <Button colorScheme="red" bg={useColorModeValue("auto", "red.400")} color="white" mt={3}>Learn more</Button>
+            </Link>
           </Box>
         </SimpleGrid>
       </Container>
@@ -133,24 +134,24 @@ export default function BenefitsPage() {
         <Heading as="h2" size="md" color="brand.muted">THANKS TO OUR SPONSORS</Heading>
         <Stack direction="row" spacing={8} justify="center" m={4}>
           <Flex align="center" justify="center">
-            <CLink href="https://hackclub.com" isExternal>
+            <Link href="https://hackclub.com" isExternal>
               <Image w={24} h="auto" src="/images/logos/hackclub.png" alt="Hack Club"/>
-            </CLink>
+            </Link>
           </Flex>
           <Flex align="center" justify="center">
-            <CLink href="https://stickermule.com" isExternal>
+            <Link href="https://stickermule.com" isExternal>
               <Image w={36} h="auto" src="/images/logos/stickermule.svg" alt="Stickermule"/>
-            </CLink>
+            </Link>
           </Flex>
           <Flex align="center" justify="center">
-            <CLink href="https://replit.com" isExternal>
+            <Link href="https://replit.com" isExternal>
               <Image w={36} h="auto" src="/images/logos/replit.png" alt="Replit"/>
-            </CLink>
+            </Link>
           </Flex>
           <Flex align="center" justify="center">
-            <CLink href="https://notion.so" isExternal>
+            <Link href="https://notion.so" isExternal>
               <Image w={24} h="auto" src="/images/logos/notion.webp" alt="Notion"/>
-            </CLink>
+            </Link>
           </Flex>
         </Stack>
       </Container>
@@ -201,7 +202,7 @@ export default function BenefitsPage() {
           <ModalBody>
             <Heading as="h2" size="md">How to redeem</Heading>
             <OrderedList mt={2} mb={6}>
-              <ListItem>Head to <CLink href="https://figma.com/education/apply" isExternal>figma.com/education/apply</CLink></ListItem>
+              <ListItem>Head to <Link href="https://figma.com/education/apply" isExternal>figma.com/education/apply</Link></ListItem>
               <ListItem>Click the Apply button</ListItem>
               <ListItem>For school name, enter <Code>Hack Club</Code></ListItem>
               <ListItem>For school website, enter <Code>hackclub.com</Code></ListItem>

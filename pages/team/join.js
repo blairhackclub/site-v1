@@ -61,8 +61,8 @@ export default function JoinTeam(){
         <Text fontSize="xl">
           Contact linkai101#4245 or tinu#0935 on Discord.
         </Text>
-        <Link href={socials.discord} style={{ textDecoration: "none" }}>
-          <Button colorScheme="blue" mt={4} isExternal>Join the Discord</Button>
+        <Link href={socials.discord} style={{ textDecoration: "none" }} isExternal>
+          <Button colorScheme="blue" mt={4}>Join the Discord</Button>
         </Link>
       </Container>
   </>

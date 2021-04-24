@@ -1,6 +1,6 @@
 import React from 'react';
 import socials from '../data/socials';
-import Link from 'next/link';
+import NextLink from 'next/link';
 
 import {
   Container,
@@ -8,7 +8,7 @@ import {
   SimpleGrid,
   Text,
   Heading,
-  Link as CLink,
+  Link,
   Image,
   useColorModeValue,
 } from '@chakra-ui/react';
@@ -33,22 +33,22 @@ export default function FooterComponent() {
             <Heading mb={1} size="md" color={useColorModeValue("gray.500", "gray.400")}>
               Hack Club
             </Heading>
-            <CLink href={socials.discord}>Discord</CLink>
-            <Link href="/team">Our Team</Link>
-            <Link href="/team/join">Join Our Team</Link>
-            <CLink href="https://hackclub.com/slack" isExternal>HQ Slack</CLink>
+            <Link href={socials.discord} isExternal>Discord</Link>
+            <NextLink href="/team" passHref><Link>Our Team</Link></NextLink>
+            <NextLink href="/team/join" passHref><Link>Join Our Team</Link></NextLink>
+            <Link href="https://hackclub.com/slack" isExternal>HQ Slack</Link>
           </Stack>
 
           <Stack direction="column" spacing={3} flex={1} w={36}>
             <Heading mb={1} size="md" color={useColorModeValue("gray.500", "gray.400")}>
               Resources
             </Heading>
-            <CLink href="https://hackclub.com/conduct" isExternal>Code of Conduct</CLink>
-            <CLink href="https://hackclub.com/preface" isExternal>Preface</CLink>
-            <Link href="/workshops">Workshops</Link>
-            <Link href="/benefits">Benefits</Link>
-            <CLink href="https://hackathons.hackclub.com" isExternal>Hackathons</CLink>
-            <CLink href="https://events.hackclub.com" isExternal>Events</CLink>
+            <Link href="https://hackclub.com/conduct" isExternal>Code of Conduct</Link>
+            <Link href="https://hackclub.com/preface" isExternal>Preface</Link>
+            <NextLink href="/workshops" passHref><Link>Workshops</Link></NextLink>
+            <NextLink href="/benefits" passHref><Link>Benefits</Link></NextLink>
+            <Link href="https://hackathons.hackclub.com" isExternal>Hackathons</Link>
+            <Link href="https://events.hackclub.com" isExternal>Events</Link>
           </Stack>
         </Stack>
 
@@ -56,21 +56,21 @@ export default function FooterComponent() {
         <Stack direction="column" spacing={3} w="auto">
           <Image h={12} w={32} src="/branding/flag-standalone.png"/>
           <SimpleGrid w={36} columns={{ base: 8, md: 4 }} py={2} spacingX={12} spacingY={2}>
-            <CLink href={socials.discord} isExternal p={1}>
+            <Link href={socials.discord} p={1} isExternal>
               <FontAwesomeIcon icon={faDiscord} size="lg"/>
-            </CLink>
-            <CLink href={socials.github} isExternal>
+            </Link>
+            <Link href={socials.github} isExternal>
               <Icon glyph="github" size={32} />
-            </CLink>
-            <CLink href={socials.youtube} isExternal>
+            </Link>
+            <Link href={socials.youtube} isExternal>
               <Icon glyph="youtube" size={32} />
-            </CLink>
-            <CLink href={socials.instagram} isExternal>
+            </Link>
+            <Link href={socials.instagram} isExternal>
               <Icon glyph="instagram" size={32} />
-            </CLink>
-            <CLink href={"mailto:"+socials.email}>
+            </Link>
+            <Link href={"mailto:"+socials.email}>
               <Icon glyph="email" size={32} />
-            </CLink>
+            </Link>
           </SimpleGrid>
 
           <Stack direction="column" spacing={1}>
