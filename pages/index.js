@@ -37,8 +37,9 @@ export default function Home() {
           <Heading as="h2" size="lg" my={2} color="white" fontWeight="normal">
             A creative coding club where you can learn, share, and hack.
           </Heading>
-          <Heading as="h3" size="md" mt={4} color="white" fontWeight="semibold">
-            Our club will run at Blair starting the 2021-2022 school year.
+          <Heading as="h3" size="md" mt={4} color="white" fontWeight="semibold" lineHeight={1.4}>
+            Our club will run at Blair starting the 2021-2022 school year.<br/>
+            <Text as="span" fontWeight="normal">Join our <Link href={socials.discord} textDecoration="underline">Discord</Link> for the latest updates.</Text>
           </Heading>
         </Container>
       </Box>
@@ -137,8 +138,8 @@ export default function Home() {
       <Box bg="brand.orange" color="white">
         <Container maxW="container.xl" p={12} align="center">
           <Heading as="h2" size="md" /*color="brand.muted"*/ color="white">GET STARTED</Heading>
-          <Heading as="h1" size="2xl" my={2}>
-            <Text as="span" /*color="brand.red"*/ color="white">Join Blair Hack Club today!</Text>
+          <Heading as="h1" size="2xl" /*color="brand.red"*/ color="white" my={2}>
+            Join Blair Hack Club today!
           </Heading>
           <Text fontSize="xl">
             Our club will run at Blair starting the 2021-2022 school year.

@@ -52,6 +52,7 @@ export default function NavbarComponent() {
             {/* <MenuItem to="https://www.notion.so/blairhackclub/Schedule-e5fc831bcaf942129bb6ea2621b0dfa0" setIsOpen={setIsOpen} isExternal>SCHEDULE</MenuItem>
             <MenuItem to="/benefits" setIsOpen={setIsOpen}>BENEFITS</MenuItem>
             <MenuItem to="/workshops" setIsOpen={setIsOpen}>WORKSHOPS</MenuItem> */}
+            <MenuItem to="/team" setIsOpen={setIsOpen}>TEAM</MenuItem>
             <MenuItem to="/team/join" setIsOpen={setIsOpen}>JOIN OUR TEAM</MenuItem>
             <MenuItem to={socials.discord} type="button" setIsOpen={setIsOpen} isExternal>DISCORD</MenuItem>
           </Stack>

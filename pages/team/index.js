@@ -1,8 +1,9 @@
 import React from 'react';
 import Head from 'next/head';
+import NextLink from 'next/link'
+
 import config from '../../data/config';
 import team from '../../data/team';
-import NextLink from 'next/link'
 
 import {
   Container,
@@ -11,12 +12,10 @@ import {
   Text,
 	SimpleGrid,
 	Box,
-	useColorModeValue,
 	Stack,
-	Flex,
 	Image,
 	Button,
-	Tag
+	useColorModeValue,
 } from '@chakra-ui/react';
 
 export default function JoinTeam(){
@@ -30,37 +29,62 @@ export default function JoinTeam(){
 			<Heading as="h1" size="2xl" my={2} color="brand.red">
 				Our Team
 			</Heading>
-            <Heading as="h2" size="md" my={2} fontWeight="normal">
-			</Heading>
     </Container>
 
-		<Container maxW="container.lg">
-			<SimpleGrid columns={{ base: 1, md: 2 }} spacing={8} py={8} px={4}>
-				{team.map(person =>
-					<Box align="center" p={8} bg={useColorModeValue("gray.50", "gray.900")} boxShadow="xs" borderRadius="lg" key={person.name}>
-						<Box minH={200} mb={2}>
-                            <Box mt={2}>
-								<Image h={250} borderRadius="50%" src={person.image}/>
-							</Box>
-							<Heading mt={5} as="h2" size="lg">{person.name}</Heading>
-							<Text fontSize="lg" mt={2}>{person.description}</Text>
-							<Link href={person.site} isExternal style={{ textDecoration: "none" }}>
-                                <Button colorScheme="blue" mt={3}>Learn more</Button>
-                            </Link>
+		<Container maxW="container.lg" mb={{ base: 2, md: 12 }}>
+			<Stack direction={{ base: "column", md: "row" }} spacing={{ base: 2, md: 8 }} justify="center">
+				{team.captains.map(member =>
+					<Box 
+						align="center" p={4} 
+						key={member.name}
+					>
+						<Box>
+							<Image w="100%" maxW="200px" borderRadius="50%" src={member.image} alt={member.name}/>
 						</Box>
+						<Link href={member.link} isExternal>
+							<Heading as="h3" size="md" mt={5}>{member.name}</Heading>
+						</Link>
+						<Text fontSize="md" lineHeight={1.2}>{member.description}</Text>
+					</Box>
+				)}
+			</Stack>
+		</Container>
+
+		<Container maxW="container.lg">
+			<SimpleGrid columns={{ base: 1, md: 4 }} spacing={{ base: 2, md: 8 }} justify="center">
+				{team.officers.map(member =>
+					<Box 
+						align="center" p={4} 
+						key={member.name}
+					>
+						<Box>
+							<Image w="90%" maxW="200px" borderRadius="50%" src={member.image} alt={member.name}/>
+						</Box>
+						<Link href={member.link} isExternal>
+							<Heading as="h3" size="md" mt={5}>{member.name}</Heading>
+						</Link>
+						<Text fontSize="md" lineHeight={1.2}>{member.description}</Text>
 					</Box>
 				)}
 			</SimpleGrid>
 		</Container>
 
-		<Container maxW="container.xl" p={12} pt={4} align="center">
-        <Heading as="h2" size="xl" my={1}>
-          <Text as="span" color="brand.red">Interested in joining?</Text>
-        </Heading>
-        <NextLink href="/team/join" style={{ textDecoration: "none" }}>
-          <Button colorScheme="blue" mt={4} isExternal>Join our team</Button>
-        </NextLink>
-      </Container>
+		<Container maxW="container.xl" p={12} align="center">
+			<Heading as="h2" size="md" color="brand.muted">JOIN OUR TEAM</Heading>
+			<Heading as="h1" size="xl" color="brand.red" my={2}>
+				Interested in joining us?
+			</Heading>
+			
+			<Text fontSize="xl">
+				Apply for an officer position. Officers manage different aspects of the club.
+			</Text>
+
+			<NextLink href="/team/join" passHref>
+				<Link style={{ textDecoration: "none" }}>
+					<Button colorScheme="blue" mt={4} isExternal>Learn more</Button>
+				</Link>
+			</NextLink>
+		</Container>
   </>
   );
 }

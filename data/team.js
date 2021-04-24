@@ -1,14 +1,17 @@
-export default [
+export default {
+  captains: [
     {
       name: "Linkai Wu",
       description: "President & Founder",
       image: "/images/team/linkai.jpeg",
-      site: "https://linkaiwu.com"
+      link: "https://linkaiwu.com"
     },
     {
       name: "Tinu Vanapamula",
-      description: "Vice President & Founder",
+      description: "VP & Founder",
       image: "/images/team/tinu.jpg",
-      site: "https://tinu.tech"
-    }
-]
+      link: "https://tinu.tech"
+    },
+  ],
+  officers: []
+}
