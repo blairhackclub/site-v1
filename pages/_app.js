@@ -14,6 +14,13 @@ function MyApp({ Component, pageProps }) {
       <Head>
         <title>{config.titleDefault}</title>
         <link rel="icon" href="/favicon.png" />
+
+        <meta name="description" content={config.description}/>
+        <meta property="og:title" content={config.titleDefault} key="ogtitle"/>
+        <meta property="og:description" content={config.description} key="ogdesc"/>
+        <meta property="og:image" content={config.image} key="ogimage"/>
+        <meta property="og:site_name" content={config.titleDefault} key="ogsitename"/>
+        <meta property="og:url" content={config.url} key="ogurl"/>
       </Head>
       
       <ChakraProvider theme={theme} resetCSS>
