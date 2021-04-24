@@ -1,8 +1,8 @@
 import React from 'react';
 import Head from 'next/head';
 import config from '../../data/config';
-import officers from '../../data/officers';
-import socials from '../../data/socials';
+import team from '../../data/team';
+import NextLink from 'next/link'
 
 import {
   Container,
@@ -36,14 +36,17 @@ export default function JoinTeam(){
 
 		<Container maxW="container.lg">
 			<SimpleGrid columns={{ base: 1, md: 2 }} spacing={8} py={8} px={4}>
-				{officers.map(position =>
-					<Box p={8} bg={useColorModeValue("gray.50", "gray.900")} boxShadow="xs" borderRadius="lg" key={position.title}>
+				{team.map(person =>
+					<Box align="center" p={8} bg={useColorModeValue("gray.50", "gray.900")} boxShadow="xs" borderRadius="lg" key={person.name}>
 						<Box minH={200} mb={2}>
-							<Heading as="h2" size="lg">{position.title}</Heading>
-							<Text fontSize="lg" mt={2}>{position.description}</Text>
-							<Box align="center" mt={2}>
-								<Image h={125}  src={position.image}/>
+                            <Box mt={2}>
+								<Image h={250} borderRadius="50%" src={person.image}/>
 							</Box>
+							<Heading mt={5} as="h2" size="lg">{person.name}</Heading>
+							<Text fontSize="lg" mt={2}>{person.description}</Text>
+							<Link href={person.site} isExternal style={{ textDecoration: "none" }}>
+                                <Button colorScheme="blue" mt={3}>Learn more</Button>
+                            </Link>
 						</Box>
 					</Box>
 				)}
@@ -52,14 +55,11 @@ export default function JoinTeam(){
 
 		<Container maxW="container.xl" p={12} pt={4} align="center">
         <Heading as="h2" size="xl" my={1}>
-          <Text as="span" color="brand.red">Interested?</Text>
+          <Text as="span" color="brand.red">Interested in joining?</Text>
         </Heading>
-        <Text fontSize="xl">
-          Contact linkai101#4245 or tinu#0935 on Discord.
-        </Text>
-        <Link href={socials.discord} style={{ textDecoration: "none" }}>
-          <Button colorScheme="blue" mt={4} isExternal>Join the Discord</Button>
-        </Link>
+        <NextLink href="/team/join" style={{ textDecoration: "none" }}>
+          <Button colorScheme="blue" mt={4} isExternal>Join our team</Button>
+        </NextLink>
       </Container>
   </>
   );
