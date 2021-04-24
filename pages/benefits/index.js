@@ -2,7 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import config from '../../data/config';
 import stickers from '../../data/stickers';
-import Link from 'next/Link';
+import Link from 'next/link';
 
 import {
   Box,

@@ -1,6 +1,6 @@
 import React from 'react';
 import socials from '../data/socials';
-import Link from 'next/Link';
+import Link from 'next/link';
 
 import {
   Container,
