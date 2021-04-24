@@ -18,13 +18,6 @@ import {
   AccordionButton,
   AccordionPanel,
   AccordionIcon,
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalFooter,
-  ModalBody,
-  ModalCloseButton,
 } from '@chakra-ui/react';
 
 import socials from '../data/socials';
@@ -126,34 +119,36 @@ export default function Home() {
         </Text>
       </Container>
 
-      <Box bg="brand.orange">
+      {/* <Box bg="brand.orange">
         <Container maxW="container.lg" p={12}>
           <Heading as="h1" size="2xl" my={2} color="white">
             #BlairHacks_5
           </Heading>
           <Heading as="h2" size="lg" my={2} color="white" fontWeight="normal">
-            {/*We are hosting BlairHacks_5 in 2022!*/}
+            // We are hosting BlairHacks_5 in 2022!
             BlairHacks is the <b>oldest</b> and one of the <b>largest</b> high-school hackathons in Maryland hosted annually at MBHS in Silver Spring.
           </Heading>
           <Link href="https://hacks.mbhs.edu" style={{ textDecoration: "none" }} isExternal>
             <Button bg="orange.300" color="white" _hover={{ bg:"orange.200" }}>Check it out!</Button>
           </Link>
         </Container>
+      </Box> */}
+      
+      <Box bg="brand.orange" color="white">
+        <Container maxW="container.xl" p={12} align="center">
+          <Heading as="h2" size="md" /*color="brand.muted"*/ color="white">GET STARTED</Heading>
+          <Heading as="h1" size="2xl" my={2}>
+            <Text as="span" /*color="brand.red"*/ color="white">Join Blair Hack Club today!</Text>
+          </Heading>
+          <Text fontSize="xl">
+            Our club will run at Blair starting the 2021-2022 school year.
+            Join the Discord for the latest updates!
+          </Text>
+          <Link href={socials.discord} style={{ textDecoration: "none" }} isExternal>
+            <Button colorScheme="blackAlpha"/*"blue"*/ color="white" mt={4}>Join the Discord</Button>
+          </Link>
+        </Container>
       </Box>
-
-      <Container maxW="container.xl" p={12} align="center">
-        <Heading as="h2" size="md" color="brand.muted">GET STARTED</Heading>
-        <Heading as="h1" size="2xl" my={2}>
-          <Text as="span" color="brand.red">Join Blair Hack Club today!</Text>
-        </Heading>
-        <Text fontSize="xl">
-          Our club will run at Blair starting the 2021-2022 school year.
-          Join the Discord for the latest updates!
-        </Text>
-        <Link href={socials.discord} style={{ textDecoration: "none" }} isExternal>
-          <Button colorScheme="blue" mt={4}>Join the Discord</Button>
-        </Link>
-      </Container>
 
       <Container maxW="container.md" p={12}>
         <Heading as="h2" size="md" color="brand.muted" align="center">FAQ</Heading>

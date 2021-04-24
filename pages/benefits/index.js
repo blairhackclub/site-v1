@@ -66,7 +66,7 @@ export default function BenefitsPage() {
               </Stack>
             </Box>
             <NextLink href="/benefits/stickers" passHref>
-              <Button colorScheme="red" bg={useColorModeValue("auto", "red.400")} color="white" mt={3}>Learn more</Button>
+              <Button bg={useColorModeValue("brand.red", "red.400")} color="white" mt={3}>Learn more</Button>
             </NextLink>
           </Box>
           <Box p={8} bg={useColorModeValue("gray.50", "gray.900")} boxShadow="xs" borderRadius="lg">
@@ -81,7 +81,7 @@ export default function BenefitsPage() {
               </Text>
             </Box>
             <NextLink href="/benefits/replit" passHref>
-              <Button colorScheme="red" bg={useColorModeValue("auto", "red.400")} color="white" mt={3}>Learn more</Button>
+              <Button bg={useColorModeValue("brand.red", "red.400")} color="white" mt={3}>Learn more</Button>
             </NextLink>
           </Box>
           <Box p={8} bg={useColorModeValue("gray.50", "gray.900")} boxShadow="xs" borderRadius="lg">
@@ -96,7 +96,7 @@ export default function BenefitsPage() {
               </Text>
             </Box>
 
-            <Button colorScheme="red" bg={useColorModeValue("auto", "red.400")} color="white" mt={3} onClick={() => setNotionOpen(true)}>Redeem</Button>
+            <Button bg={useColorModeValue("brand.red", "red.400")} color="white" mt={3} onClick={() => setNotionOpen(true)}>Redeem</Button>
           </Box>
           <Box p={8} bg={useColorModeValue("gray.50", "gray.900")} boxShadow="xs" borderRadius="lg">
             <Box minH={200} mb={2}>
@@ -110,7 +110,7 @@ export default function BenefitsPage() {
               </Text>
             </Box>
 
-            <Button colorScheme="red" bg={useColorModeValue("auto", "red.400")} color="white" mt={3} onClick={() => setFigmaOpen(true)}>Redeem</Button>
+            <Button bg={useColorModeValue("brand.red", "red.400")} color="white" mt={3} onClick={() => setFigmaOpen(true)}>Redeem</Button>
           </Box>
           <Box p={8} bg={useColorModeValue("gray.50", "gray.900")} boxShadow="xs" borderRadius="lg">
             <Box minH={200} mb={2}>
@@ -124,7 +124,7 @@ export default function BenefitsPage() {
               </Text>
             </Box>
             <Link href="https://education.github.com/pack" style={{ textDecoration: "none" }} isExternal>
-              <Button colorScheme="red" bg={useColorModeValue("auto", "red.400")} color="white" mt={3}>Learn more</Button>
+              <Button bg={useColorModeValue("brand.red", "red.400")} color="white" mt={3}>Learn more</Button>
             </Link>
           </Box>
         </SimpleGrid>
