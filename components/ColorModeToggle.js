@@ -8,7 +8,12 @@ export default function ColorModeToggle(props) {
 
   return (
     <IconButton
-      icon={colorMode === 'light' ? <SunIcon/> : <MoonIcon/>}
+      colorScheme="darkAlpha"
+      icon={
+        colorMode === 'light' ? 
+        <SunIcon boxSize={5} color="white"/> 
+        : <MoonIcon boxSize={5} color="white"/>
+      }
       onClick={toggleColorMode}
       {...rest}
     />

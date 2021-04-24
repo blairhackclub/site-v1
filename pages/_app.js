@@ -1,8 +1,12 @@
 import '../styles/globals.css';
+import "@fortawesome/fontawesome-svg-core/styles.css";
 import Head from 'next/head';
-import config from '../config';
+import config from '../data/config';
 import { ChakraProvider } from "@chakra-ui/react";
 import theme from '../lib/theme';
+
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -13,7 +17,9 @@ function MyApp({ Component, pageProps }) {
       </Head>
       
       <ChakraProvider theme={theme} resetCSS>
-        <Component {...pageProps} />
+        <Navbar/>
+        <Component {...pageProps}/>
+        <Footer/>
       </ChakraProvider>
     </>
   );

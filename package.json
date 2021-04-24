@@ -8,14 +8,22 @@
     "start": "next start"
   },
   "dependencies": {
-    "@chakra-ui/icons": "^1.0.7",
-    "@chakra-ui/react": "^1.4.1",
+    "@chakra-ui/icons": "^1.0.12",
+    "@chakra-ui/react": "^1.6.0",
     "@emotion/react": "^11.1.5",
-    "@emotion/styled": "^11.1.5",
+    "@emotion/styled": "^11.3.0",
+    "@fortawesome/fontawesome-svg-core": "^1.2.35",
+    "@fortawesome/free-brands-svg-icons": "^5.15.3",
+    "@fortawesome/react-fontawesome": "^0.1.14",
     "@hackclub/icons": "0.0.9",
-    "framer-motion": "^4.0.0",
+    "airtable": "^0.10.1",
+    "axios": "^0.21.1",
+    "formik": "^2.2.6",
+    "framer-motion": "^4.1.9",
     "next": "10.0.9",
+    "public-ip": "^4.0.3",
     "react": "17.0.1",
-    "react-dom": "17.0.1"
+    "react-dom": "17.0.1",
+    "webhook-discord": "^3.7.7"
   }
 }
