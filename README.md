@@ -19,13 +19,12 @@ Start running the website on your computer:
 
 And then open up your web browser and go to http://localhost:3000.
 
-Powered by [Next.js] with [MDX], [Chakra UI], & [Hack Club Brand].
+Powered by [Next.js], [Chakra UI], & [Hack Club Brand].
 
 ---
 
 By [@linkai101](https://github.com/linkai101) and [@tinuh](https://github.com/tinuh) for Blair Hack Club, 2021. MIT License.
 
 [next.js]: https://nextjs.org
-[mdx]: https://mdxjs.com
 [chakra ui]: https://chakra-ui.com
 [hack club brand]: https://hackclub.com/brand

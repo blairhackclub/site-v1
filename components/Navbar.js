@@ -105,9 +105,7 @@ function MenuItem(props) {
   return (
     <NextLink href={to} passHref>
       <Link _hover={{ color: "gray.300" }} fontWeight="semibold" style={{ textDecoration: "none" }} onClick={() => setIsOpen(false)} {...rest}>
-        <Text display="block">
-          {children}
-        </Text>
+        {children}
       </Link>
     </NextLink>
   );

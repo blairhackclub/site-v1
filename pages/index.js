@@ -30,7 +30,7 @@ export default function Home() {
       </Head>
 
       <Box bg={"brand.red"}>
-        <Container maxW="container.lg" px={8} py={24} align="center">
+        <Container maxW="container.lg" px={8} py={12} align="center">
           <Heading as="h1" size="2xl" my={2} color="white">
             Blair Hack Club
           </Heading>

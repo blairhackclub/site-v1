@@ -37,7 +37,8 @@ export default function JoinTeam(){
 
 		<Container maxW="container.lg">
 			<Heading textAlign = "center" as="h2" size="lg" my={2} fontWeight="normal">
-					We're looking for officers with the positions listed below.
+				We're no longer looking for officers. Come back next year for more opportunities!
+				{/* We're looking for officers with the positions listed below. */}
 			</Heading>
 			<SimpleGrid columns={{ base: 1, md: 2 }} spacing={8} py={8} px={4}>
 				{officers.map(position =>
@@ -51,7 +52,7 @@ export default function JoinTeam(){
 						</Box>
 					</Box>
 				)}
-			</SimpleGrid>
+				</SimpleGrid>
 		</Container>
 
 		<Container maxW="container.xl" p={12} pt={4} align="center">
