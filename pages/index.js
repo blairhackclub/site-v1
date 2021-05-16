@@ -27,7 +27,7 @@ export default function Home() {
     <>
       <Head>
         <title>Home{config.titleSuffix}</title>
-        <meta property="og:title" content={`Home${config.titleDefault}`} key="ogtitle"/>
+        <meta property="og:title" content={`Home${config.titleSuffix}`} key="ogtitle"/>
         <meta name="description" content="A creative coding club at Montgomery Blair HS where you can learn, share, and hack."/>
         <meta property="og:description" content="A creative coding club at Montgomery Blair HS where you can learn, share, and hack." key="ogdesc"/>
       </Head>

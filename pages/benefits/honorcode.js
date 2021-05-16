@@ -14,7 +14,7 @@ export default function HonorCodePage() {
     <>
       <Head>
         <title>Benefits Honor Code{config.titleSuffix}</title>
-        <meta property="og:title" content={`Benefits Honor Code${config.titleDefault}`} key="ogtitle"/>
+        <meta property="og:title" content={`Benefits Honor Code${config.titleSuffix}`} key="ogtitle"/>
         <meta name="description" content="With great power comes great responsibility."/>
         <meta property="og:description" content="With great power comes great responsibility." key="ogdesc"/>
       </Head>

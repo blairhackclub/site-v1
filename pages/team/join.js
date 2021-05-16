@@ -24,7 +24,7 @@ export default function JoinTeam(){
   <>
     <Head>
     	<title>Join our Team{config.titleSuffix}</title>
-			<meta property="og:title" content={`Join our Team${config.titleDefault}`} key="ogtitle"/>
+			<meta property="og:title" content={`Join our Team${config.titleSuffix}`} key="ogtitle"/>
 			<meta name="description" content="Help us run the club!"/>
 			<meta property="og:description" content="Help us run the club!" key="ogdesc"/>
     </Head>

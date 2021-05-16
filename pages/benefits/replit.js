@@ -21,7 +21,7 @@ export default function ReplitPage() {
     <>
       <Head>
         <title>Repl.it – Benefits{config.titleSuffix}</title>
-        <meta property="og:title" content={`Repl.it – Benefits${config.titleDefault}`} key="ogtitle"/>
+        <meta property="og:title" content={`Repl.it – Benefits${config.titleSuffix}`} key="ogtitle"/>
         <meta name="description" content="An online IDE for coding in just about any language in your browser."/>
         <meta property="og:description" content="An online IDE for coding in just about any language in your browser." key="ogdesc"/>
       </Head>
