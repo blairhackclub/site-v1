@@ -23,7 +23,10 @@ export default function JoinTeam(){
   return (
   <>
     <Head>
-    <title>Join our Team{config.titleSuffix}</title>
+    	<title>Join our Team{config.titleSuffix}</title>
+			<meta property="og:title" content={`Join our Team${config.titleDefault}`} key="ogtitle"/>
+			<meta name="description" content="Help us run the club!"/>
+			<meta property="og:description" content="Help us run the club!" key="ogdesc"/>
     </Head>
 
     <Container maxW="container.xl" p={12} align="center">

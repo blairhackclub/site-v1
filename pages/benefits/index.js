@@ -37,6 +37,9 @@ export default function BenefitsPage() {
     <>
       <Head>
         <title>Benefits{config.titleSuffix}</title>
+        <meta property="og:title" content={`Benefits${config.titleDefault}`} key="ogtitle"/>
+        <meta name="description" content="Hack Clubbers recieve FREE perks, suck as stickers, Replit Hacker, and more!"/>
+        <meta property="og:description" content="Hack Clubbers recieve FREE perks, suck as stickers, Replit Hacker, and more!" key="ogdesc"/>
       </Head>
 
       <Container maxW="container.xl" p={12} align="center">

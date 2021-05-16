@@ -23,6 +23,9 @@ export default function StickersPage() {
     <>
       <Head>
         <title>Stickers – Benefits{config.titleSuffix}</title>
+        <meta property="og:title" content={`Stickers – Benefits${config.titleDefault}`} key="ogtitle"/>
+        <meta name="description" content="Get free exclusive Hack Club stickers mailed straight to your door!"/>
+        <meta property="og:description" content="Get free exclusive Hack Club stickers mailed straight to your door!" key="ogdesc"/>
       </Head>
 
       <Container maxW="container.xl" p={12} align="center">
