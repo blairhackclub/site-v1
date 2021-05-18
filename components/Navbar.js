@@ -53,7 +53,6 @@ export default function NavbarComponent() {
             <MenuItem to="/benefits" setIsOpen={setIsOpen}>BENEFITS</MenuItem>
             <MenuItem to="/workshops" setIsOpen={setIsOpen}>WORKSHOPS</MenuItem> */}
             <MenuItem to="/team" setIsOpen={setIsOpen}>TEAM</MenuItem>
-            <MenuItem to="/team/join" setIsOpen={setIsOpen}>JOIN OUR TEAM</MenuItem>
             <MenuItem to={socials.discord} type="button" setIsOpen={setIsOpen} isExternal>DISCORD</MenuItem>
           </Stack>
         </Box>
@@ -67,7 +66,7 @@ function Logo({ setIsOpen, ...rest }) {
     <Box px={8} {...rest}>
       <NextLink href="/" passHref>
         <Link onClick={() => setIsOpen(false)}>
-          <Image h={16} src="/branding/flag-orpheus-top.png"/>
+          <Image h={16} src="/branding/flag-orpheus-top.svg"/>
         </Link>
       </NextLink>
     </Box>

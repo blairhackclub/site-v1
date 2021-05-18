@@ -34,7 +34,7 @@ export default function JoinTeam(){
 			</Heading>
     </Container>
 
-		<Container maxW="container.lg" mb={{ base: 2, md: 12 }}>
+		<Container maxW="container.md" mb={{ base: 2, md: 8 }}>
 			<Stack direction={{ base: "column", md: "row" }} spacing={{ base: 2, md: 8 }} justify="center">
 				{team.captains.map(member =>
 					<Box 
@@ -53,8 +53,8 @@ export default function JoinTeam(){
 			</Stack>
 		</Container>
 
-		<Container maxW="container.lg">
-			<SimpleGrid columns={{ base: 1, md: 4 }} spacing={{ base: 2, md: 8 }} justify="center">
+		<Container maxW="container.md" p={8}>
+			<SimpleGrid columns={{ base: 1, md: 3 }} spacing={{ base: 2, md: 8 }}>
 				{team.officers.map(member =>
 					<Box 
 						align="center" p={4} 
@@ -72,7 +72,7 @@ export default function JoinTeam(){
 			</SimpleGrid>
 		</Container>
 
-		<Container maxW="container.xl" p={12} align="center">
+		<Container maxW="container.xl" p={8} mt={12} align="center">
 			<Heading as="h2" size="md" color="brand.muted">JOIN OUR TEAM</Heading>
 			<Heading as="h1" size="xl" color="brand.red" my={2}>
 				Interested in joining us?

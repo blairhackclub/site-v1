@@ -54,7 +54,7 @@ export default function FooterComponent() {
 
         {/* BRAND, CONNECTIONS, & CONTACT */}
         <Stack direction="column" spacing={3} w="auto">
-          <Image h={12} w={32} src="/branding/flag-standalone.png"/>
+          <Image h={12} w={32} src="/branding/flag-standalone.svg"/>
           <SimpleGrid w={36} columns={{ base: 8, md: 4 }} py={2} spacingX={12} spacingY={2}>
             <Link href={socials.discord} p={1} isExternal>
               <FontAwesomeIcon icon={faDiscord} size="lg"/>
