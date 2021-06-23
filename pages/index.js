@@ -123,7 +123,22 @@ export default function Home() {
         </Text>
       </Container>
       
-      <Box bg="brand.orange" color="white">
+      <Box bg="brand.orange">
+        <Container maxW="container.lg" p={12}>
+          <Heading as="h1" size="2xl" my={2} color="white">
+            #BlairHacks_5
+          </Heading>
+          <Heading as="h2" size="lg" my={2} color="white" fontWeight="normal">
+            We are hosting BlairHacks_5 in 2022!
+            BlairHacks is the <b>oldest</b> and one of the <b>largest</b> high-school hackathons in Maryland hosted annually at MBHS in Silver Spring.
+          </Heading>
+          <Link href="https://blairhacks.com" style={{ textDecoration: "none" }} isExternal>
+            <Button bg="orange.300" color="white" _hover={{ bg:"orange.200" }}>Check it out!</Button>
+          </Link>
+        </Container>
+      </Box>
+
+      <Box bg="brand.red" color="white">
         <Container maxW="container.xl" p={12} align="center">
           <Heading as="h2" size="md" /*color="brand.muted"*/ color="white">GET STARTED</Heading>
           <Heading as="h1" size="2xl" /*color="brand.red"*/ color="white" my={2}>
@@ -134,22 +149,7 @@ export default function Home() {
             Join the Discord for the latest updates!
           </Text>
           <Link href={socials.discord} style={{ textDecoration: "none" }} isExternal>
-            <Button colorScheme="blackAlpha"/*"blue"*/ color="white" mt={4}>Join the Discord</Button>
-          </Link>
-        </Container>
-      </Box>
-
-      <Box bg="brand.red">
-        <Container maxW="container.lg" p={12}>
-          <Heading as="h1" size="2xl" my={2} color="white">
-            #BlairHacks_5
-          </Heading>
-          <Heading as="h2" size="lg" my={2} color="white" fontWeight="normal">
-            We are hosting BlairHacks_5 in 2022!
-            BlairHacks is the <b>oldest</b> and one of the <b>largest</b> high-school hackathons in Maryland hosted annually at MBHS in Silver Spring.
-          </Heading>
-          <Link href="https://blairhacks.com" style={{ textDecoration: "none" }} isExternal>
-            <Button bg="blue.400" color="white" _hover={{ bg:"orange.200" }}>Check it out!</Button>
+            <Button bg="blue.400" _hover={{ bg:"blue.300" }} colorScheme="blackAlpha"/*"blue"*/ color="white" mt={4}>Join the Discord</Button>
           </Link>
         </Container>
       </Box>
