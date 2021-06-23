@@ -123,7 +123,7 @@ export default function Home() {
         </Text>
       </Container>
 
-      <Box bg="brand.orange">
+      <Box bg="brand.cyan">
         <Container maxW="container.lg" p={12}>
           <Heading as="h1" size="2xl" my={2} color="white">
             #BlairHacks_5
