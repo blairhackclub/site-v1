@@ -123,20 +123,20 @@ export default function Home() {
         </Text>
       </Container>
 
-      {/* <Box bg="brand.orange">
+      <Box bg="brand.orange">
         <Container maxW="container.lg" p={12}>
           <Heading as="h1" size="2xl" my={2} color="white">
             #BlairHacks_5
           </Heading>
           <Heading as="h2" size="lg" my={2} color="white" fontWeight="normal">
-            // We are hosting BlairHacks_5 in 2022!
+            We are hosting BlairHacks_5 in 2022!
             BlairHacks is the <b>oldest</b> and one of the <b>largest</b> high-school hackathons in Maryland hosted annually at MBHS in Silver Spring.
           </Heading>
-          <Link href="https://hacks.mbhs.edu" style={{ textDecoration: "none" }} isExternal>
+          <Link href="https://blairhacks.com" style={{ textDecoration: "none" }} isExternal>
             <Button bg="orange.300" color="white" _hover={{ bg:"orange.200" }}>Check it out!</Button>
           </Link>
         </Container>
-      </Box> */}
+      </Box>
       
       <Box bg="brand.orange" color="white">
         <Container maxW="container.xl" p={12} align="center">
