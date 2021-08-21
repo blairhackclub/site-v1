@@ -30,8 +30,8 @@ import {
 } from '@chakra-ui/react';
 
 export default function BenefitsPage() {
-  const [notionOpen, setNotionOpen] = React.useState(false);
   const [figmaOpen, setFigmaOpen] = React.useState(false);
+  const [zoomOpen, setZoomOpen] = React.useState(false);
 
   return (
     <>
@@ -50,7 +50,7 @@ export default function BenefitsPage() {
         Thanks to <Link href="https://hackclub.com" fontWeight="bold" color="brand.orange" isExternal>Hack Club</Link>, club members recieve FREE perks.
         </Heading>
         <Text mt={4}>
-          By claiming benefits, you agree to the <Link href="/benefits/honorcode" fontWeight="bold" color="brand.red" isExternal>Benefits Honor Code</Link>.
+          By claiming benefits, you agree to the <Link href="/benefits/honorcode" fontWeight="bold" color="brand.red">Benefits Honor Code</Link>.
         </Text>
       </Container>
 
@@ -74,7 +74,7 @@ export default function BenefitsPage() {
           </Box>
           <Box p={8} bg={useColorModeValue("gray.50", "gray.900")} boxShadow="xs" borderRadius="lg">
             <Box minH={200} mb={2}>
-              <Heading as="h2" size="lg">Repl.it</Heading>
+              <Heading as="h2" size="lg">Replit</Heading>
               <Text fontSize="lg" mt={2}>
                 An online IDE for coding in just about any language in your browser.
               </Text>
@@ -87,20 +87,7 @@ export default function BenefitsPage() {
               <Button bg={useColorModeValue("brand.red", "red.400")} colorScheme="red" color="white" mt={3}>Learn more</Button>
             </NextLink>
           </Box>
-          <Box p={8} bg={useColorModeValue("gray.50", "gray.900")} boxShadow="xs" borderRadius="lg">
-            <Box minH={200} mb={2}>
-              <Heading as="h2" size="lg">Notion</Heading>
-              <Text fontSize="lg" mt={2}>
-                A popular tool for planning projects, or even just to organize your lifestyle.
-              </Text>
-              <Text fontSize="lg" mt={3}>
-                <Tag variant="solid" colorScheme="teal" fontWeight="bold" mr={2}>Benefits</Tag>
-                Free Personal Pro plan in workspaces for students. 
-              </Text>
-            </Box>
-
-            <Button bg={useColorModeValue("brand.red", "red.400")} colorScheme="red" color="white" mt={3} onClick={() => setNotionOpen(true)}>Redeem</Button>
-          </Box>
+         
           <Box p={8} bg={useColorModeValue("gray.50", "gray.900")} boxShadow="xs" borderRadius="lg">
             <Box minH={200} mb={2}>
               <Heading as="h2" size="lg">Figma</Heading>
@@ -130,6 +117,19 @@ export default function BenefitsPage() {
               <Button bg={useColorModeValue("brand.red", "red.400")} colorScheme="red" color="white" mt={3}>Learn more</Button>
             </Link>
           </Box>
+          <Box p={8} bg={useColorModeValue("gray.50", "gray.900")} boxShadow="xs" borderRadius="lg">
+            <Box minH={200} mb={2}>
+              <Heading as="h2" size="lg" mt={2}>Zoom Pro</Heading>
+              <Text fontSize="lg" mt={2}>
+                you know what zoom is bruh
+              </Text>
+              <Text fontSize="lg" mt={3}>
+                <Tag variant="solid" colorScheme="teal" fontWeight="bold" mr={2}>Benefits</Tag>
+                Access to Zoom Pro meetings.
+              </Text>
+            </Box>
+            <Button bg={useColorModeValue("brand.red", "red.400")} colorScheme="red" color="white" mt={3} onClick={() => setZoomOpen(true)}>Instructions</Button>
+          </Box>
         </SimpleGrid>
       </Container>
 
@@ -151,50 +151,11 @@ export default function BenefitsPage() {
               <Image w={36} h="auto" src="/images/logos/replit.png" alt="Replit"/>
             </Link>
           </Flex>
-          <Flex align="center" justify="center">
-            <Link href="https://notion.so" isExternal>
-              <Image w={24} h="auto" src="/images/logos/notion.webp" alt="Notion"/>
-            </Link>
-          </Flex>
         </Stack>
       </Container>
-      
 
-      {/* NOTION */}
-      <Modal isOpen={notionOpen} onClose={() => setNotionOpen(false)}>
-        <ModalOverlay />   
-        <ModalContent>
-          <ModalHeader>
-            Redeem Notion Personal Pro
-          </ModalHeader>
-          <ModalCloseButton />
-
-          <ModalBody>
-            <Heading as="h2" size="md">To redeem your Notion subscription</Heading>
-            <Text>(You must be using a desktop computer to do this)</Text>
-            <OrderedList mt={2} mb={6}>
-              <ListItem>If you haven’t made an account, go for it.</ListItem>
-              <ListItem>In your left sidebar, go to <Code>Settings & Members</Code></ListItem>
-              <ListItem>Next, click on <Code>Upgrade</Code> (or <Code>Plans</Code> if you're already on a plan)</ListItem>
-              <ListItem>Scroll down to the <Code>Students & Educators</Code> section and click <Code>Get free Education plan</Code></ListItem>
-              <ListItem>In the pop-up that appears, type promo code <Code>HACK</Code> and press Submit</ListItem>
-              <ListItem>You’ll get automatic access to all the premium features! ✨</ListItem>
-            </OrderedList>
-            
-            <Heading as="h2" size="md">Use Notion with your team</Heading>
-            <OrderedList mt={2} mb={6}>
-              <ListItem>Create a homepage for your team in your sidebar</ListItem>
-              <ListItem>Add all other pages you want your team to access inside this homepage</ListItem>
-              <ListItem>Click <Code>Share</Code> at the top right of your homepage, then <Code>Invite a Person</Code></ListItem>
-              <ListItem>Add all your teammates with their email addresses and press <Code>Invite</Code></ListItem>
-              <ListItem>They’ll all receive an email invite to the page so you can collaborate together!</ListItem>
-            </OrderedList>
-          </ModalBody>
-        </ModalContent>
-      </Modal>
-      
       {/* FIGMA */}
-      <Modal isOpen={figmaOpen} onClose={() => setFigmaOpen(false)}>
+      <Modal size="xl" isOpen={figmaOpen} onClose={() => setFigmaOpen(false)}>
         <ModalOverlay />   
         <ModalContent>
           <ModalHeader>
@@ -211,6 +172,62 @@ export default function BenefitsPage() {
               <ListItem>For school website, enter <Code>hackclub.com</Code></ListItem>
               <ListItem>Have fun!!</ListItem>
             </OrderedList>
+          </ModalBody>
+        </ModalContent>
+      </Modal>
+
+      {/* ZOOM */}
+      <Modal size="xl" isOpen={zoomOpen} onClose={() => setZoomOpen(false)}>
+        <ModalOverlay />   
+        <ModalContent>
+          <ModalHeader>
+            Hack Club Zoom Pro
+          </ModalHeader>
+          <ModalCloseButton />
+
+          <ModalBody>
+            <Text>
+              To start a Zoom Pro meeting, simply type <Code>/z</Code> anywhere in the <Link href="https://hackclub.com/slack" color="brand.red" isExternal>Hack Club Slack</Link>.
+            </Text>
+            <Image src="https://cloud-grl3n7i0e-hack-club-bot.vercel.app/0z-demo.gif" mt={2}/>
+
+            <Heading as="h2" size="md" mt={4}>Google Calendar Integration</Heading>
+            <Text>
+              If you want to schedule meetings ahead of time (&amp; give people a Zoom link), we also built a Google Calendar integration. Here's how to install it:
+            </Text>
+            <OrderedList mt={2} mb={6}>
+              <ListItem>Open <Link href="https://calendar.google.com" color="brand.red" isExternal>calendar.google.com</Link></ListItem>
+              <ListItem>
+                On the right, click the + button
+                <Image src="https://cloud-il0b7j4pr-hack-club-bot.vercel.app/0screen_shot_2021-04-14_at_11.51.08_am.png"/>
+              </ListItem>
+              <ListItem>
+                Search for <Code>/z</Code>
+                <Image src="https://cloud-gjnywcsjd-hack-club-bot.vercel.app/0screen_shot_2021-04-14_at_11.59.03_am.png"/>
+              </ListItem>
+              <ListItem>
+                Install the app
+                <Image src="https://cloud-roeyr4i1n-hack-club-bot.vercel.app/0screen_shot_2021-04-14_at_11.59.54_am.png"/>
+              </ListItem>
+              <ListItem>
+                Once it's installed, create a calendar event. Select <Code>Zoom Pro Meeting</Code> from the dropdown (if it doesn't appear, try refreshing—it will eventually appear).
+                <Image src="https://cloud-roeyr4i1n-hack-club-bot.vercel.app/2screen_shot_2021-04-14_at_12.03.28_pm.png"/>
+              </ListItem>
+              <ListItem>
+              You should see this "login required" thing. Click on <Code>Log in</Code>.
+                <Image src="https://cloud-roeyr4i1n-hack-club-bot.vercel.app/3screen_shot_2021-04-14_at_12.03.38_pm.png"/>
+              </ListItem>
+              <ListItem>
+                A Slack OAuth window should pop up. Follow the instructions to sign in with your Slack account.
+                <Image src="https://cloud-roeyr4i1n-hack-club-bot.vercel.app/4screen_shot_2021-04-14_at_12.04.06_pm.png"/>
+              </ListItem>
+              <ListItem>
+                Now it will work!
+                <Image src="https://cloud-9zgxl6zn4-hack-club-bot.vercel.app/2screen_shot_2021-02-23_at_11.05.02_am.png"/>
+              </ListItem>
+            </OrderedList>
+
+            <Text>/z is an unconventional yet effective solution by Hack Club to bring the benefits of Zoom Pro to more Hack Clubbers around the world.</Text>
           </ModalBody>
         </ModalContent>
       </Modal>

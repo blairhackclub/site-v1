@@ -78,11 +78,6 @@ export default function FooterComponent() {
               Contact
             </Heading>
             <Text>blairhackclub@gmail.com</Text>
-            <Text>
-              Discord:<br/>
-              linkai101#4245 (President)<br/>
-              tinu#0935 (VP)
-            </Text>
           </Stack>
         </Stack>
       </Stack>
