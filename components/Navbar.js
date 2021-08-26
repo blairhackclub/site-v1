@@ -51,10 +51,8 @@ export default function NavbarComponent() {
             justify={["center", "space-between", "flex-end", "flex-end"]}
             direction={["column", "row", "row", "row"]}
           >
-            {/* deprecating dark mode, allow dark mode users to switch */
-              colorMode === 'dark' && 
-              <ColorModeToggle color={useColorModeValue("brand.red", "white")}/>
-            }
+
+            <ColorModeToggle color={useColorModeValue("brand.red", "white")}/>
             {/* <MenuItem to="https://www.notion.so/blairhackclub/Schedule-e5fc831bcaf942129bb6ea2621b0dfa0" setIsOpen={setIsOpen} isExternal>SCHEDULE</MenuItem>
             <MenuItem to="/workshops" setIsOpen={setIsOpen}>WORKSHOPS</MenuItem> */}
             <MenuItem to="/team" setIsOpen={setIsOpen}>TEAM</MenuItem>

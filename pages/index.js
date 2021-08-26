@@ -81,7 +81,7 @@ export default function Home() {
         <AspectRatio ratio={16 / 9} mt={8}>
           <iframe
             width="560" height="315" 
-            src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ" 
+            src="https://www.youtube-nocookie.com/embed/2lBfk9bmwyY" 
             title="Hack Club Promo Video" 
             frameborder="0" 
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
