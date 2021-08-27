@@ -8,11 +8,13 @@ import {
   Container,
   Flex,
   Stack,
+  SimpleGrid,
   Heading,
   Text,
   Link,
   Button,
   Image,
+  AspectRatio,
   Accordion,
   AccordionItem,
   AccordionButton,
@@ -33,21 +35,63 @@ export default function Home() {
       </Head>
 
       <Box bg={"brand.red"}>
-        <Container maxW="container.lg" px={8} py={12} align="center">
-          <Heading as="h1" size="2xl" my={2} color="white">
+        <Container maxW="container.lg" p={8} align="center">
+          <Heading as="h1" size="2xl" mb={2} color="white">
             Blair Hack Club
           </Heading>
           <Heading as="h2" size="lg" my={2} color="white" fontWeight="normal">
             A creative coding club where you can learn, share, and hack.
           </Heading>
-          <Heading as="h3" size="md" mt={4} color="white" fontWeight="semibold" lineHeight={1.4}>
-            Our club will run at Blair starting the 2021-2022 school year.<br/>
-            <Text as="span" fontWeight="normal">Join our <Link href={socials.discord} textDecoration="underline">Discord</Link> for the latest updates.</Text>
-          </Heading>
+
+          <SimpleGrid p={4} mt={8}
+            columns={{ base: 1, md: 3 }} spacing={{ base: 4, md: 12 }}
+            bg="rgb(0,0,0,0.1)"
+            borderRadius="xl"
+          >
+            <Box align="left" color="white">
+              <Heading size="md">When &amp; where?</Heading>
+              <Text>TBD</Text>
+            </Box>
+
+            <Box align="left" color="white">
+              <Heading size="md">Apps, games, you name it.</Heading>
+              <Text>We design and run workshops about a variety of tech topics such as web apps, mobile apps, games, machine learning, hardware, and more!</Text>
+            </Box>
+
+            <Box align="left" color="white">
+              <Heading size="md">Beginners welcome!</Heading>
+              <Text>Our engaging and beginner-friendly workshops will get you up and hacking in no time.</Text>
+            </Box>
+          </SimpleGrid>
+
+          <Link href="https://bhc.page.link/discord" style={{ textDecoration: "none" }}>
+            <Button mt={6}
+              size="lg" 
+              colorScheme="blackAlpha" bg="transparent"
+              borderColor="white" borderWidth={2} borderRadius="xl"
+              fontSize="xl" fontWeight="bold" color="white"
+            >
+              Join our Discord!
+            </Button>
+          </Link>
         </Container>
       </Box>
 
-      <Container maxW="container.xl" p={12} pt={16}>
+      <Container maxW="container.lg" py={3}>
+        <AspectRatio ratio={16 / 9} mt={8}>
+          <iframe
+            width="560" height="315" 
+            src="https://www.youtube-nocookie.com/embed/2lBfk9bmwyY" 
+            title="Hack Club Promo Video" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen
+            style={{ borderRadius: "24px" }}
+          />
+        </AspectRatio>
+      </Container>
+
+      <Container maxW="container.xl" p={12}>
         <Heading as="h2" size="md" color="brand.muted">WHO WE ARE</Heading>
         <Heading as="h1" size="2xl" my={2}>
           We are a club for <Text as="span" color="brand.orange" style={{ whiteSpace: "pre" }}>creative coding</Text>.
@@ -99,11 +143,11 @@ export default function Home() {
               </Box>
               <Box>
                 <Heading as="h1" size="lg">
-                  Free #SWAG and benefits!
+                  Free swag and benefits!
                 </Heading>
                 <Text fontSize="xl">
                   Thanks to <Link href="https://hackclub.com" fontWeight="bold" color="brand.orange" isExternal>Hack Club</Link>, 
-                  club members receive FREE stickers, repl.it Hacker, Notion Pro, Figma Pro, and more!
+                  club members receive FREE stickers, Replit Hacker, Figma Pro, and more!
                 </Text>
               </Box>
             </Stack>
@@ -118,7 +162,7 @@ export default function Home() {
         </Heading>
         <Text fontSize="xl" maxW="container.md">
           Members team up and participate in hackathons 
-          like <Link href="https://mocohacks.org" fontWeight="bold" color="brand.cyan" isExternal>MoCoHacks</Link> & <Link href="https://pennapps.com" fontWeight="bold" color="brand.cyan" isExternal>PennApps</Link> and 
+          like <Link href="https://blairhacks.com" fontWeight="bold" color="brand.cyan" isExternal>BlairHacks</Link> &amp; <Link href="https://mocohacks.org" fontWeight="bold" color="brand.cyan" isExternal>MoCoHacks</Link> and 
           compete in events like the <Link href="https://congressionalappchallenge.us" fontWeight="bold" color="brand.cyan" isExternal>Congressional App Challenge</Link>.
         </Text>
       </Container>
@@ -130,26 +174,10 @@ export default function Home() {
           </Heading>
           <Heading as="h2" size="lg" my={2} color="white" fontWeight="normal">
             We are hosting BlairHacks_5 in 2022!
-            BlairHacks is the <b>oldest</b> and one of the <b>largest</b> high-school hackathons in Maryland hosted annually at MBHS in Silver Spring.
+            BlairHacks is one of the <b>oldest</b> and one of the <b>largest</b> high-school hackathons in Maryland hosted annually at MBHS in Silver Spring.
           </Heading>
           <Link href="https://blairhacks.com" style={{ textDecoration: "none" }} isExternal>
             <Button bg="orange.300" color="white" _hover={{ bg:"orange.200" }}>Check it out!</Button>
-          </Link>
-        </Container>
-      </Box>
-
-      <Box bg="brand.red" color="white">
-        <Container maxW="container.xl" p={12} align="center">
-          <Heading as="h2" size="md" /*color="brand.muted"*/ color="white">GET STARTED</Heading>
-          <Heading as="h1" size="2xl" /*color="brand.red"*/ color="white" my={2}>
-            Join Blair Hack Club today!
-          </Heading>
-          <Text fontSize="xl">
-            Our club will run at Blair starting the 2021-2022 school year.
-            Join the Discord for the latest updates!
-          </Text>
-          <Link href={socials.discord} style={{ textDecoration: "none" }} isExternal>
-            <Button bg="blue.400" _hover={{ bg:"blue.300" }} colorScheme="blackAlpha"/*"blue"*/ color="white" mt={4}>Join the Discord</Button>
           </Link>
         </Container>
       </Box>

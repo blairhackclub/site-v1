@@ -10,6 +10,7 @@ import {
   Link,
   Image,
   useColorModeValue,
+  useColorMode,
 } from '@chakra-ui/react';
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 
@@ -17,6 +18,8 @@ import ColorModeToggle from './ColorModeToggle';
 import socials from '../data/socials';
 
 export default function NavbarComponent() {
+  const { colorMode } = useColorMode();
+
   const [isOpen, setIsOpen] = React.useState(false);
   const toggle = () => setIsOpen(!isOpen);
 
@@ -48,12 +51,13 @@ export default function NavbarComponent() {
             justify={["center", "space-between", "flex-end", "flex-end"]}
             direction={["column", "row", "row", "row"]}
           >
+
             <ColorModeToggle color={useColorModeValue("brand.red", "white")}/>
             {/* <MenuItem to="https://www.notion.so/blairhackclub/Schedule-e5fc831bcaf942129bb6ea2621b0dfa0" setIsOpen={setIsOpen} isExternal>SCHEDULE</MenuItem>
-            <MenuItem to="/benefits" setIsOpen={setIsOpen}>BENEFITS</MenuItem>
             <MenuItem to="/workshops" setIsOpen={setIsOpen}>WORKSHOPS</MenuItem> */}
             <MenuItem to="/team" setIsOpen={setIsOpen}>TEAM</MenuItem>
-            <MenuItem to={socials.discord} type="button" setIsOpen={setIsOpen} isExternal>DISCORD</MenuItem>
+            <MenuItem to="/benefits" setIsOpen={setIsOpen}>BENEFITS</MenuItem>
+            <MenuItem to={socials.discord} setIsOpen={setIsOpen} isExternal>DISCORD</MenuItem>
           </Stack>
         </Box>
       </Flex>
@@ -63,7 +67,7 @@ export default function NavbarComponent() {
 
 function Logo({ setIsOpen, ...rest }) {
   return (
-    <Box px={8} {...rest}>
+    <Box zIndex={999} px={8} {...rest}>
       <NextLink href="/" passHref>
         <Link onClick={() => setIsOpen(false)}>
           <Image h={16} src="/branding/flag-orpheus-top.svg"/>
