@@ -128,7 +128,7 @@ export default function BenefitsPage() {
                 Access to Zoom Pro meetings.
               </Text>
             </Box>
-            <Button bg={useColorModeValue("brand.red", "red.400")} colorScheme="red" color="white" mt={3} onClick={() => setZoomOpen(true)}>Instructions</Button>
+            <Button bg={useColorModeValue("brand.red", "red.400")} colorScheme="red" color="white" mt={3} onClick={() => setZoomOpen(true)}>Learn more</Button>
           </Box>
         </SimpleGrid>
       </Container>
