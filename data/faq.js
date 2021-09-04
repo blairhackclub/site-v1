@@ -9,7 +9,7 @@ export default [
   },
   {
     question: "When and where do meetings take place?",
-    answer: "Our club will run at the start of the 2021-2022 school year. The meeting date/time is currently TBD. Join the Discord to stay tuned!"
+    answer: "For the 2021-22 school year, we meet on Mondays during lunch at room 314. (Mr. Foster's room) See you there!"
   },
   {
     question: "Does it cost money to join?",
@@ -17,6 +17,6 @@ export default [
   },
   {
     question: "How will we code?",
-    answer: "Our club has access to the computer lab. You can code on a school computer or on a personal device. If the school computer doesn't have the appropriate software or tools, you can use Repl.it (replit.com) or any online tool!"
+    answer: "Our club has access to the computer lab. You can code on a school computer or on a personal device. If the school computer doesn't have the appropriate software or tools, you can use Replit (replit.com) or any online tool!"
   }
 ]
