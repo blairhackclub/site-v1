@@ -54,13 +54,14 @@ export default function JoinTeam(){
 		</Container>
 
 		<Container maxW="container.md" p={8}>
-			<SimpleGrid columns={{ base: 1, md: 3 }} spacing={{ base: 2, md: 8 }}>
+			<SimpleGrid style={{display: ['flex']}} alignContent="center" columns={{ base: 1, md: 3 }} spacing={{ base: 2, md: 8 }}>
 				{team.officers.map(member =>
 					<Box 
 						align="center" p={4} 
 						key={member.name}
+						alignItems="center"
 					>
-						<Box>
+						<Box align="center">
 							<Image w="90%" maxW="200px" borderRadius="50%" src={member.image} alt={member.name}/>
 						</Box>
 						<Link href={member.link} isExternal>
