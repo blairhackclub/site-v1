@@ -155,8 +155,7 @@ export default function BenefitsComponent(props) {
                 />
               </Box>
             </FormControl>
-            <Text>By submitting, you agree to the <Link href="/benefits/honorcode" color="red" fontWeight="bold" isExternal>Benefits Honor Code</Link>.</Text>
-            
+            <Text fontStyle="italic">After submitting, more steps will be sent to your email inbox in a couple of days.</Text>
           </ModalBody>
 
           <ModalFooter>

@@ -49,9 +49,6 @@ export default function BenefitsPage() {
         <Heading as="h2" size="md" my={2} fontWeight="normal">
         Thanks to <Link href="https://hackclub.com" fontWeight="bold" color="brand.orange" isExternal>Hack Club</Link>, club members recieve FREE perks.
         </Heading>
-        <Text mt={4}>
-          By claiming benefits, you agree to the <Link href="/benefits/honorcode" fontWeight="bold" color="brand.red">Benefits Honor Code</Link>.
-        </Text>
       </Container>
 
       <Container maxW="container.lg">
@@ -100,7 +97,7 @@ export default function BenefitsPage() {
               </Text>
             </Box>
 
-            <Button bg={useColorModeValue("brand.red", "red.400")} colorScheme="red" color="white" mt={3} onClick={() => setFigmaOpen(true)}>Redeem</Button>
+            <Button bg={useColorModeValue("brand.red", "red.400")} colorScheme="red" color="white" mt={3} onClick={() => setFigmaOpen(true)}>Learn more</Button>
           </Box>
           <Box p={8} bg={useColorModeValue("gray.50", "gray.900")} boxShadow="xs" borderRadius="lg">
             <Box minH={200} mb={2}>
@@ -128,7 +125,7 @@ export default function BenefitsPage() {
                 Access to Zoom Pro meetings.
               </Text>
             </Box>
-            <Button bg={useColorModeValue("brand.red", "red.400")} colorScheme="red" color="white" mt={3} onClick={() => setZoomOpen(true)}>Instructions</Button>
+            <Button bg={useColorModeValue("brand.red", "red.400")} colorScheme="red" color="white" mt={3} onClick={() => setZoomOpen(true)}>Learn more</Button>
           </Box>
         </SimpleGrid>
       </Container>
