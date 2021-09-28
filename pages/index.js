@@ -50,7 +50,12 @@ export default function Home() {
           >
             <Box align="left" color="white">
               <Heading size="md">When &amp; where?</Heading>
-              <Text>TBD</Text>
+              <Text>
+                We meet every <b>Monday during lunch</b> at <b>Room 314</b>.
+              </Text>
+              <Text fontStyle="italic">
+                Join our Discord to get weekly updates on meetings.
+              </Text>
             </Box>
 
             <Box align="left" color="white">
@@ -83,9 +88,9 @@ export default function Home() {
             width="560" height="315" 
             src="https://www.youtube-nocookie.com/embed/2lBfk9bmwyY" 
             title="Hack Club Promo Video" 
-            frameborder="0" 
+            frameBorder="0" 
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen
+            allowFullscreen
             style={{ borderRadius: "24px" }}
           />
         </AspectRatio>
