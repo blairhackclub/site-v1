@@ -31,13 +31,13 @@ export default {
   team: [
     {
       name: "Linkai Wu",
-      description: "President & Founder",
+      description: "President",
       image: "/images/team/linkai.jpeg",
       link: "https://linkaiwu.com"
     },
     {
       name: "Tinu Vanapamula",
-      description: "VP & Founder",
+      description: "Vice President",
       image: "/images/team/tinu.jpg",
       link: "https://tinu.tech"
     },
