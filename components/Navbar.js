@@ -15,19 +15,21 @@ import {
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 
 import ColorModeToggle from './ColorModeToggle';
-import socials from '../data/socials';
+import lang from '../data/lang';
 
-export default function NavbarComponent() {
+export default function NavbarComponent({ logoOnly = false }) {
   const { colorMode } = useColorMode();
 
   const [isOpen, setIsOpen] = React.useState(false);
   const toggle = () => setIsOpen(!isOpen);
 
+  if (logoOnly) return <Logo position="fixed"/>;
+
   return (
     <>
       {/* Logo (fixed pos) */}
       <Logo position="fixed"/>
-
+      
       <Flex as="nav"
         align="center" justify="space-between" wrap="wrap"
         zIndex={100}
@@ -56,11 +58,9 @@ export default function NavbarComponent() {
               colorMode === 'dark' && 
               <ColorModeToggle color={useColorModeValue("brand.red", "white")}/>
             }
-            {/* <MenuItem to="https://www.notion.so/blairhackclub/Schedule-e5fc831bcaf942129bb6ea2621b0dfa0" setIsOpen={setIsOpen} isExternal>SCHEDULE</MenuItem>
-            <MenuItem to="/workshops" setIsOpen={setIsOpen}>WORKSHOPS</MenuItem> */}
-            <MenuItem to="/team" setIsOpen={setIsOpen}>TEAM</MenuItem>
+            <MenuItem to="https://workshops.pages.dev" setIsOpen={setIsOpen}>WORKSHOPS</MenuItem>
             <MenuItem to="/benefits" setIsOpen={setIsOpen}>BENEFITS</MenuItem>
-            <MenuItem to={socials.discord} setIsOpen={setIsOpen} isExternal>DISCORD</MenuItem>
+            <MenuItem to={lang.socials.discord} setIsOpen={setIsOpen} isExternal>DISCORD</MenuItem>
           </Stack>
         </Box>
       </Flex>

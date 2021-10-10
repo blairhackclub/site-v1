@@ -5,6 +5,8 @@ import NextLink from 'next/link';
 import config from '../../data/config';
 import stickers from '../../data/stickers';
 
+import Benefits from '../../components/Benefits';
+
 import {
   Box,
   Flex,
@@ -30,6 +32,7 @@ import {
 } from '@chakra-ui/react';
 
 export default function BenefitsPage() {
+  const [replitOpen, setReplitOpen] = React.useState(false);
   const [figmaOpen, setFigmaOpen] = React.useState(false);
   const [zoomOpen, setZoomOpen] = React.useState(false);
 
@@ -47,7 +50,7 @@ export default function BenefitsPage() {
           Benefits
         </Heading>
         <Heading as="h2" size="md" my={2} fontWeight="normal">
-        Thanks to <Link href="https://hackclub.com" fontWeight="bold" color="brand.orange" isExternal>Hack Club</Link>, club members recieve FREE perks.
+          All hack clubbers recieve FREE perks!
         </Heading>
       </Container>
 
@@ -80,9 +83,9 @@ export default function BenefitsPage() {
                 Free 1 year subscription to Repl.it Hacker.
               </Text>
             </Box>
-            <NextLink href="/benefits/replit" passHref>
-              <Button bg={useColorModeValue("brand.red", "red.400")} colorScheme="red" color="white" mt={3}>Learn more</Button>
-            </NextLink>
+            
+            <Button bg={useColorModeValue("brand.red", "red.400")} colorScheme="red" color="white" mt={3} onClick={() => setReplitOpen(true)}>Redeem</Button>
+            <Benefits benefit="repl.it" open={replitOpen} setOpen={setReplitOpen}/>
           </Box>
          
           <Box p={8} bg={useColorModeValue("gray.50", "gray.900")} boxShadow="xs" borderRadius="lg">
@@ -97,7 +100,7 @@ export default function BenefitsPage() {
               </Text>
             </Box>
 
-            <Button bg={useColorModeValue("brand.red", "red.400")} colorScheme="red" color="white" mt={3} onClick={() => setFigmaOpen(true)}>Learn more</Button>
+            <Button bg={useColorModeValue("brand.red", "red.400")} colorScheme="red" color="white" mt={3} onClick={() => setFigmaOpen(true)}>Redeem</Button>
           </Box>
           <Box p={8} bg={useColorModeValue("gray.50", "gray.900")} boxShadow="xs" borderRadius="lg">
             <Box minH={200} mb={2}>
@@ -125,7 +128,7 @@ export default function BenefitsPage() {
                 Access to Zoom Pro meetings.
               </Text>
             </Box>
-            <Button bg={useColorModeValue("brand.red", "red.400")} colorScheme="red" color="white" mt={3} onClick={() => setZoomOpen(true)}>Learn more</Button>
+            <Button bg={useColorModeValue("brand.red", "red.400")} colorScheme="red" color="white" mt={3} onClick={() => setZoomOpen(true)}>Redeem</Button>
           </Box>
         </SimpleGrid>
       </Container>

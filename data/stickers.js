@@ -1,27 +1,7 @@
 export default [
   {
-    image: "https://hackclub.com/stickers/2016_hack_camp.svg",
-    label: "2016 Hack Camp"
-  },
-  {
-    image: "https://hackclub.com/stickers/2018_holidays.svg",
-    label: "2018 Holidays"
-  },
-  {
-    image: "https://hackclub.com/stickers/2020_progress.png",
-    label: "2020 Progress"
-  },
-  {
-    image: "https://hackclub.com/stickers/2020_storm_the_hack.png",
-    label: "2020 Storm The Hack"
-  },
-  {
     image: "https://hackclub.com/stickers/all_fun_javascript.svg",
     label: "All Fun Javascript"
-  },
-  {
-    image: "https://hackclub.com/stickers/bank.png",
-    label: "Bank"
   },
   {
     image: "https://hackclub.com/stickers/black_lives_matter.svg",

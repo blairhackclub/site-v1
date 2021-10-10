@@ -103,7 +103,7 @@ export default function BenefitsComponent(props) {
       <ModalOverlay />   
         <ModalContent>
         <ModalHeader>
-          Request {props.benefit ? (props.benefit === "repl.it" ? "Repl.it Hacker" : titleCase(props.benefit)) : "Benefits"}
+          Request {props.benefit ? (props.benefit === "repl.it" ? "Replit Hacker" : titleCase(props.benefit)) : "Benefits"}
         </ModalHeader>
         <ModalCloseButton />
 

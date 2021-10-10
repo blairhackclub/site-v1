@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import config from '../data/config';
-import faq from '../data/faq';
+import lang from '../data/lang';
 
 import {
   Box,
@@ -21,8 +21,6 @@ import {
   AccordionPanel,
   AccordionIcon,
 } from '@chakra-ui/react';
-
-import socials from '../data/socials';
 
 export default function Home() {
   return (
@@ -90,7 +88,7 @@ export default function Home() {
             title="Hack Club Promo Video" 
             frameBorder="0" 
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-            allowFullscreen
+            allowFullScreen
             style={{ borderRadius: "24px" }}
           />
         </AspectRatio>
@@ -187,10 +185,28 @@ export default function Home() {
         </Container>
       </Box>
 
-      <Container maxW="container.md" p={12}>
-        <Heading as="h2" size="md" color="brand.muted" align="center">FAQ</Heading>
+      <Container maxW="container.lg" p={12} pb={4}>
+        <Heading as="h2" size="md" color="brand.muted" align="center">OUR TEAM</Heading>
+        <SimpleGrid mt={4} columns={{ base: 2, sm: 3, md: 4, lg: 5 }} spacing={{ base: 0, md: 4 }}>
+          {lang.team.map(member =>
+            <Box 
+              align="center" p={2} 
+              key={member.name}
+            >
+              <Image w="90%" maxW="200px" borderRadius="50%" src={member.image} alt={member.name}/>
+              <Link href={member.link} isExternal>
+                <Heading as="h3" size="md" mt={5}>{member.name}</Heading>
+              </Link>
+              <Text fontSize="md" lineHeight={1.2}>{member.description}</Text>
+            </Box>
+          )}
+        </SimpleGrid>
+      </Container>
+
+      <Container maxW="container.md" p={12} pt={4}>
+        <Heading as="h2" size="md" color="brand.muted" align="center" mt={12}>FAQ</Heading>
         <Accordion mt={4} allowMultiple>
-          {faq.map(item =>
+          {lang.faq.map(item =>
             <AccordionItem key={item.question}>
               <Heading>
                 <AccordionButton>

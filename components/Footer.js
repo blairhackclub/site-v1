@@ -1,5 +1,5 @@
 import React from 'react';
-import socials from '../data/socials';
+import lang from '../data/lang';
 import NextLink from 'next/link';
 
 import {
@@ -33,9 +33,7 @@ export default function FooterComponent() {
             <Heading mb={1} size="md" color={useColorModeValue("gray.500", "gray.400")}>
               Hack Club
             </Heading>
-            <Link href={socials.discord} isExternal>Discord</Link>
-            <NextLink href="/team" passHref><Link>Our Team</Link></NextLink>
-            <NextLink href="/team/join" passHref><Link>Join Our Team</Link></NextLink>
+            <Link href={lang.socials.discord} isExternal>Discord</Link>
             <Link href="https://hackclub.com/slack" isExternal>HQ Slack</Link>
           </Stack>
 
@@ -43,12 +41,15 @@ export default function FooterComponent() {
             <Heading mb={1} size="md" color={useColorModeValue("gray.500", "gray.400")}>
               Resources
             </Heading>
-            <Link href="https://hackclub.com/conduct" isExternal>Code of Conduct</Link>
-            <Link href="https://workshops.hackclub.com/preface" isExternal>Preface</Link>
             <Link href="https://workshops.pages.dev" isExternal>Workshops</Link>
             <NextLink href="/benefits" passHref><Link>Benefits</Link></NextLink>
+            <Link href="https://hackclub.com/conduct" isExternal>Code of Conduct</Link>
+            <Link href="https://workshops.hackclub.com/preface" isExternal>Preface</Link>
+            <Link href="https://hackclub.com/philosophy" isExternal>Philosophy</Link>
+            {/*
             <Link href="https://hackathons.hackclub.com" isExternal>Hackathons</Link>
             <Link href="https://events.hackclub.com" isExternal>Events</Link>
+            */}
           </Stack>
         </Stack>
 
@@ -56,19 +57,19 @@ export default function FooterComponent() {
         <Stack direction="column" spacing={3} w="auto">
           <Image h={12} w={32} src="/branding/flag-standalone.svg"/>
           <SimpleGrid w={36} columns={{ base: 8, md: 4 }} py={2} spacingX={12} spacingY={2}>
-            <Link href={socials.discord} p={1} isExternal>
+            <Link href={lang.socials.discord} p={1} isExternal>
               <FontAwesomeIcon icon={faDiscord} size="lg"/>
             </Link>
-            <Link href={socials.github} isExternal>
+            <Link href={lang.socials.github} isExternal>
               <Icon glyph="github" size={32} />
             </Link>
-            <Link href={socials.youtube} isExternal>
+            <Link href={lang.socials.youtube} isExternal>
               <Icon glyph="youtube" size={32} />
             </Link>
-            <Link href={socials.instagram} isExternal>
+            <Link href={lang.socials.instagram} isExternal>
               <Icon glyph="instagram" size={32} />
             </Link>
-            <Link href={"mailto:"+socials.email}>
+            <Link href={"mailto:"+lang.socials.email}>
               <Icon glyph="email" size={32} />
             </Link>
           </SimpleGrid>
