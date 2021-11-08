@@ -72,7 +72,7 @@ export default function BenefitsPage() {
               <Button bg={useColorModeValue("brand.red", "red.400")} colorScheme="red" color="white" mt={3}>Learn more</Button>
             </NextLink>
           </Box>
-          <Box p={8} bg={useColorModeValue("gray.50", "gray.900")} boxShadow="xs" borderRadius="lg">
+           {/* <Box p={8} bg={useColorModeValue("gray.50", "gray.900")} boxShadow="xs" borderRadius="lg">
             <Box minH={200} mb={2}>
               <Heading as="h2" size="lg">Replit</Heading>
               <Text fontSize="lg" mt={2}>
@@ -86,7 +86,7 @@ export default function BenefitsPage() {
             
             <Button bg={useColorModeValue("brand.red", "red.400")} colorScheme="red" color="white" mt={3} onClick={() => setReplitOpen(true)}>Redeem</Button>
             <Benefits benefit="repl.it" open={replitOpen} setOpen={setReplitOpen}/>
-          </Box>
+          </Box> */}
          
           <Box p={8} bg={useColorModeValue("gray.50", "gray.900")} boxShadow="xs" borderRadius="lg">
             <Box minH={200} mb={2}>
