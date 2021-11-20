@@ -42,12 +42,6 @@ export default {
       link: "https://tinu.tech"
     },
     {
-      name: "Annie Gao",
-      description: "Club Operations",
-      image: "/images/team/annie.png",
-      link: "https://instagram.com/_anniegao"
-    },
-    {
       name: "Patrick Zhang",
       description: "Club Operations",
       image: "/images/team/patrick.png",
