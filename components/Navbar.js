@@ -58,7 +58,7 @@ export default function NavbarComponent({ logoOnly = false }) {
               colorMode === 'dark' && 
               <ColorModeToggle color={useColorModeValue("brand.red", "white")}/>
             }
-            <MenuItem to="https://workshops.pages.dev" setIsOpen={setIsOpen}>WORKSHOPS</MenuItem>
+            <MenuItem to="https://bhc-workshops.pages.dev" setIsOpen={setIsOpen}>WORKSHOPS</MenuItem>
             <MenuItem to="/benefits" setIsOpen={setIsOpen}>BENEFITS</MenuItem>
             <MenuItem to={lang.socials.discord} setIsOpen={setIsOpen} isExternal>DISCORD</MenuItem>
           </Stack>

@@ -187,7 +187,7 @@ export default function Home() {
 
       <Container maxW="container.lg" p={12} pb={4}>
         <Heading as="h2" size="md" color="brand.muted" align="center">OUR TEAM</Heading>
-        <SimpleGrid mt={4} columns={{ base: 2, sm: 3, md: 4, lg: 5 }} spacing={{ base: 0, md: 4 }}>
+        <SimpleGrid mt={4} columns={{ base: 2, sm: 3, md: 4 }} spacing={{ base: 0, md: 4 }}>
           {lang.team.map(member =>
             <Box 
               align="center" p={2} 
